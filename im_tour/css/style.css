@@ -1,0 +1,236 @@
+*,*::before,*::after{
+box-sizing: border-box;}
+/* Remove default padding */ul[class],ol[class]{padding: 0;}
+/* Remove default margin */body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd{margin: 0;}
+/* Set core body defaults */
+body{min-height: 100vh;scroll-behavior: smooth;text-rendering: optimizeSpeed;line-height: 1.5;}
+/* Remove list styles on ul, ol elements with a class attribute */ul[class],ol[class] {list-style: none;}
+/* A elements that don't have a class get default styles */
+a:not([class]){text-decoration-skip-ink: auto;}
+/* Make images easier to work with */
+img{max-width: 100%;display: block;}
+/* Natural flow and rhythm in articles by default */
+article > * + * {margin-top: 1em;}
+ 
+/* Inherit fonts for inputs and buttons */
+input,button,textarea,select {font: inherit;}
+
+/* STARTS HERE */
+
+.case{
+    width: 100%;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.container{
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    padding: 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+.start_page{
+    width: 100%;
+    background: url(../images/1920x1080_px_blue_Clear_Sky_landscape_mountain_nature_Valley-789188.jpg!d);
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: beginbg 1s ease-in-out 1 normal forwards;
+overflow: hidden;
+position: relative;
+}
+.stitle{
+transform: scale(1,1);
+color: white;
+text-align: center;
+animation: begintitle 1s ease 1 normal forward;
+}
+.stitle h1{
+    font-size: calc(70px + 90 *(100vw / 1520));
+    
+}
+
+.secpage{
+background: aliceblue;
+width: 100%;
+min-height: 60vh;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: 0.5 ease all;
+position: relative;
+margin: 15vh 0;
+}
+
+.image2{
+    width: 50%;
+    align-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    height: 350px;
+}
+.image2::after{
+    content: '';
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.text2{
+    width: 40%;
+    font-weight: 500;
+    font-size: calc(16px + 6 * (100vw / 1520));
+    line-height: 1.75;
+    z-index: 100;
+}
+
+p::first-letter{
+content: '';
+margin-left: 15px;
+}
+
+.gallery{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery > .container{
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 32%;
+}
+
+.col{
+flex: 0 0 32%;
+height: 100%;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+transition: 1 ease-in-out all;
+overflow: hidden;
+}
+
+.row:nth-child(2) > .col{
+flex: 0 0 49%;
+}
+
+
+.col:hover::before{
+content: '';
+width: 100%;
+height: 100%;
+transform: scale(1,1);
+}
+
+@keyframes begintitle{
+    0%{
+        transform: scale(2,2);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+@keyframes beginbg{
+    0%{
+    transform: scale(2,2);
+    }
+    100%{
+      transform: scale(1,1);  
+    }
+}
+
+
+
+
+@media (max-width:1402px) {
+    .container{
+        width: 1200px;
+    }
+    .stitle h1{
+        font-size: calc(70px + 90 *(100vw / 1402));
+        
+    }
+    .text2{
+        font-size: calc(16px + 6 * (100vw / 1402));
+    }
+    .gallery + .container{
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width:1202px) {
+    .secpage{
+        margin: 10vh 0;
+        min-height: none;
+    }
+    .stitle h1{
+        font-size: calc(70px + 90 *(100vw / 1202));
+        
+    }
+    .container{
+        width: 100%;
+        flex-direction: column;
+    }
+    .image2{
+        width: 100%;
+        position: absolute;
+        /* top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; */
+        /* background: #000; */
+    }
+    .image2::after{
+        background: #000;
+        opacity: 0.4;
+    }
+    .text2{
+        width: 100%;
+        color: aliceblue;
+        font-size: calc(16px + 6 * (100vw / 1202));
+
+    }
+    .gallery + .container{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:1002px) {
+    .secpage{
+        margin: 5vh 0;
+        min-height: none;
+    }
+    .stitle h1{
+        font-size: calc(70px + 90 *(100vw / 1002));
+        
+    }
+    .text2{
+    font-size: calc(16px + 8 * (100vw / 1002));
+    }
+    .gallery + .container{
+        flex-direction: column;
+    }
+}

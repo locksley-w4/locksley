@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="css/style.css">
+<body>
+    <div class="case">
+<div class="start_page">
+<div class="stitle">
+    <h1>Tourism</h1>
+</div>
+</div>
+
+
+<div class="secpage">
+
+<div class="container">
+    <div class="image2" style="background-image: url(images/03_bikeclass.jpg);"></div>
+    <div class="text2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla hic quia qui, quasi debitis odit et quas quam dolorem. Laudantium facere itaque eum, expedita adipisci repellat alias officia corrupti fugit?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure numquam ullam provident natus officia, obcaecati dolorum soluta omnis cumque amet earum esse doloremque corrupti? Quia consequuntur vel dolores accusantium reiciendis illo natus perferendis molestiae vitae molestias. Illum aspernatur laudantium expedita sapiente voluptas ipsum, at iste velit natus quod perferendis, numquam quibusdam nihil unde nemo repellendus, rem reiciendis maiores quo dolorem! Commodi modi quidem quo officia, hic laborum ad iusto voluptas eligendi harum dolorum cum aperiam repellendus reiciendis earum nesciunt dolore autem saepe vitae pariatur eos quae voluptatibus iure. Quasi eaque nemo libero rem explicabo ipsum, corporis sint iusto quaerat nulla.
+    </p>
+    </div>
+</div>
+
+</div>
+
+
+<div class="gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+        </div>        
+        <div class="row">
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+            <div class="col" style="background-image: url(images/03_bikeclass.jpg);"></div>
+        </div>
+    </div>
+</div>
+    <script src="JQuery/jquery-3.6.0.min.js"></script>
+
+    <script>
+      
+const textLength = $('.text2').css('height');
+
+if((visualViewport.width) <= 1202){   
+$('div.image2').css('height',textLength);
+}
+if((visualViewport.width) > 1202){
+    $('div.image2').css('height','350');
+}
+    </script>
+</body>
+</html>
