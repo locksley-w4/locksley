@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="start-footer">
-                <a href="#">Заказать курс</a>
+                <a href="#" id="starttimer">Запустить таймер</a>
                 <div class="start-footer-text">
                     <span>Участников всего:<strong>280</strong></span>
                     <span>Успешно завершивших курс: <strong>190</strong></span>
@@ -203,15 +203,25 @@
     </div>
 
 
+
+
+    <div class="popup">
+        <header class="popupheader">Окно запуска таймера</header>
+<div class="popupbody"></div>
+        
+    </div>
 <script src="scripts/JQuery/jquery-3.6.0.min.js"></script>
 
 <script>
 
 $('.nav-collapse').hide();
+// $('.popup').hide();
+
+
     $(document).ready(function(){
 
 $('.nav-collapse').click(function(){
-alert('Автору лень доделывать, пожалуйста идите нафиг)');
+alert('В разработке..');
 });
 
     if(visualViewport.width <= 1300){
@@ -229,7 +239,11 @@ $('.nav-collapse').slideToggle();
     });        
     }
 
+$('#starttimer').on('click', function(){
+    
+$('.popup').show();
 
+});
 
     });
 
