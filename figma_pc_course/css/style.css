@@ -99,7 +99,7 @@ font-weight: 700;
 .start{
     width: 100%;
     flex: 1 0 110vh;
-    background-image: url(/images/main-screen__bgc.svg);
+    background-image: url(/locksley/figma_pc_course/images/main-screen__bgc.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -233,7 +233,7 @@ font-weight: 700;
 width: 100%;
 display: flex;
 flex-direction: column;
-background-image: url(/images/bgc.png);
+background-image: url(/locksley/figma_pc_course/images/bgc.png);
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: scroll;
@@ -255,7 +255,7 @@ overflow: hidden;
     margin: auto 0;
     flex: 0 0 500px;
     height: 500px;
-    background-image: url(/images/IMG_20210508_225738_080.png);
+    background-image: url(/locksley/figma_pc_course/images/IMG_20210508_225738_080.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -409,13 +409,13 @@ align-items: center;
 }
 
 .job_img:nth-child(0){
-    background-image: url(/images/Ellipse2-1.png);
+    background-image: url(/locksley/figma_pc_course/images/Ellipse2-1.png);
 }
 .job_img:nth-child(1){
-    background-image: url(/images/Ellipse2-1.png);
+    background-image: url(/locksley/figma_pc_course/images/Ellipse2-1.png);
 }
 .job_img:nth-child(2){
-    background-image: url(/images/Ellipse2-1.png);
+    background-image: url(/locksley/figma_pc_course/images/Ellipse2-1.png);
 }
 
 .job_heading{
