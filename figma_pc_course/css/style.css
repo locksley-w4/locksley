@@ -522,7 +522,6 @@ align-items: center;
     .rectangle-self{
         flex-direction: column;
     }
-    
     .header2 + span{
         width: 40%;
     }
