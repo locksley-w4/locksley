@@ -446,13 +446,14 @@ align-items: center;
 
 .job_img{
     width: 100%;
-    flex: 0 0 400px;
+    flex: 0 0 100px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    margin-bottom: 20px;
 }
 
-.job_img:nth-child(0){
+/* .job_img:nth-child(0){
     background-image: url(/locksley/figma_pc_course/images/icon-1.png);
 }
 .job_img:nth-child(1){
@@ -460,7 +461,7 @@ align-items: center;
 }
 .job_img:nth-child(2){
     background-image: url(/locksley/figma_pc_course/images/icon-3.png);
-}
+} */
 
 .job_heading{
     width: 100%;
