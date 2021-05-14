@@ -1,19 +1,4 @@
-*,*::before,*::after{
-box-sizing: border-box;}
-/* Remove default padding */ul[class],ol[class]{padding: 0;}
-/* Remove default margin */body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd{margin: 0;}
-/* Set core body defaults */
-body{min-height: 100vh;scroll-behavior: smooth;text-rendering: optimizeSpeed;line-height: 1.5;}
-/* Remove list styles on ul, ol elements with a class attribute */ul[class],ol[class] {list-style: none;}
-/* A elements that don't have a class get default styles */
-a:not([class]){text-decoration-skip-ink: auto;}
-/* Make images easier to work with */
-img{max-width: 100%;display: block;}
-/* Natural flow and rhythm in articles by default */
-article > * + * {margin-top: 1em;}
- 
-/* Inherit fonts for inputs and buttons */
-input,button,textarea,select {font: inherit;}
+*,*::before,*::after{box-sizing: border-box;}/* Remove default padding */ul[class],ol[class]{padding: 0;}/* Remove default margin */body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd{margin: 0;}/* Set core body defaults */body{min-height: 100vh;scroll-behavior: smooth;text-rendering: optimizeSpeed;line-height: 1.5;}/* Remove list styles on ul, ol elements with a class attribute */ul[class],ol[class] {list-style: none;}/* A elements that don't have a class get default styles */a:not([class]){text-decoration-skip-ink: auto;}/* Make images easier to work with */img{max-width: 100%;display: block;}/* Natural flow and rhythm in articles by default */article > * + * {margin-top: 1em;} /* Inherit fonts for inputs and buttons */input,button,textarea,select {font: inherit;}
 
 /* STARTS HERE */
 
@@ -37,7 +22,7 @@ input,button,textarea,select {font: inherit;}
 .start_page{
     width: 100%;
     background: url(../images/1920x1080_px_blue_Clear_Sky_landscape_mountain_nature_Valley-789188.jpg!d);
-    min-height: 100vh;
+    height: 100vh;
     background-size: cover;
     background-attachment: fixed;
     background-clip: border-box;
@@ -47,14 +32,14 @@ input,button,textarea,select {font: inherit;}
     justify-content: center;
     align-items: center;
     animation: beginbg 1s ease-in-out 1 normal forwards;
-overflow: hidden;
-position: relative;
+    overflow: hidden;
+    position: relative;
 }
 .stitle{
-transform: scale(1,1);
-color: white;
-text-align: center;
-animation: begintitle 1s ease 1 normal forward;
+    transform: scale(1,1);
+    color: white;
+    text-align: center;
+    animation: begintitle 1s ease 1 normal forwards;
 }
 .stitle h1{
     font-size: calc(70px + 90 *(100vw / 1520));
@@ -146,7 +131,7 @@ transform: scale(1,1);
 
 @keyframes begintitle{
     0%{
-        transform: scale(2,2);
+        transform: scale(0.5,0.5);
     }
     100%{
         transform: scale(1,1);
