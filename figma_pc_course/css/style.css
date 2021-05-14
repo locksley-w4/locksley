@@ -43,11 +43,27 @@ font-weight: 700;
     align-items: center;
 }
 .nav-logo{
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
+    display: block;
+    object-position: center;
     object-fit: cover;
     position: relative;
     left: 20px;
+    margin-right: 15px;
+    transition: 0.5s all ease;
+    z-index:102;
+    perspective: 200px;
+    transform: skew()(0deg,0deg,0deg);
+}
+
+.nav-logo img{
+    width: 100%;
+    height: 100%;
+}
+.nav-logo.active{
+transform: rotateZ(90deg);
+position: fixed;
 }
 .nav-links{
     flex: 0 1 50%;
@@ -56,29 +72,55 @@ font-weight: 700;
     display: flex;
     justify-content: space-around;
     justify-self: center;
-
+    z-index: 101;
 }
 .nav-links a{
-    font-size: calc(13px + 7 * (100vw / 1920));
+    font-size: 26px;
     line-height: 150%;
     color: white;
     transition: 0.4s;
     text-decoration: none;
 }
 .nav-links a:hover{
-    font-size: 20px;
+    /* font-size: 20px; */
+}
+
+
+.nav-collapse{
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    left: 0;
+    background: rgba(34, 34, 39);
+    padding: 10% 0;
+}
+
+.nav-collapse >  a{
+    width: 100%;
+    text-align: center;
+    flex: 0 0 auto;
+    font-size: 56px;
+    color: white;
+    transition: 0.4s;
+    text-decoration: none;
 }
 
 .nav-btn{
     position: relative;
     right: 10px;
-    width: 12%;
+    width: 18%;
     margin-left: auto;
 }
 .nav-btn a{
     background: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%);
     border: none;
-    padding: 10px 15px;
+    padding: 10px;
     color:white;
     font-size: 16px;
     line-height: 150%;
@@ -94,7 +136,6 @@ font-weight: 700;
 .nav-btn button:focus{
 
 }
-
 
 .start{
     width: 100%;
@@ -516,15 +557,21 @@ flex: 0 0 25%;
     .container{
         padding: 15px 10.5%
     }
+    .nav-links{
+        flex: 1 0 auto;
+    }
 }
 
 @media (max-width:1001px) {
     .container{
         padding: 15px 60px;
     }
+    .nav-btn, .nav-links{
+        display: none;
+    }
 }
 
-@media (max-width:1001px) {
+@media (max-width:901px) {
     .container{
         padding: 15px 40px;
     }
