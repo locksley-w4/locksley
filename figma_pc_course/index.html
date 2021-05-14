@@ -212,12 +212,13 @@ $('.nav-collapse').hide();
 
 
     if(visualViewport.width <= 1300){
+$('.nav-btn').css('display', 'none');
+
     $('.nav-links a').appendTo('.nav-collapse');
     // $('.nav-links').css('display', 'block');
 
     $('.nav-logo').on('click', function(){
 
-$(this).css('transform', 'rotateZ(90deg)')
 
 $('.nav-logo').toggleClass('active');
 

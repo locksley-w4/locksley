@@ -53,8 +53,6 @@ font-weight: 700;
     margin-right: 15px;
     transition: 0.5s all ease;
     z-index:102;
-    perspective: 200px;
-    transform: skew()(0deg,0deg,0deg);
 }
 
 .nav-logo img{
