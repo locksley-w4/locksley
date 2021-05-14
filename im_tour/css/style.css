@@ -22,7 +22,7 @@
 .start_page{
     width: 100%;
     background: url(../images/1920x1080_px_blue_Clear_Sky_landscape_mountain_nature_Valley-789188.jpg!d);
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-attachment: fixed;
     background-clip: border-box;
@@ -40,6 +40,8 @@
     color: white;
     text-align: center;
     animation: begintitle 1s ease 1 normal forwards;
+    position: absolute;
+    transform: translate(0,-50%);
 }
 .stitle h1{
     font-size: calc(70px + 90 *(100vw / 1520));
