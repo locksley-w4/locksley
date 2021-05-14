@@ -453,13 +453,13 @@ align-items: center;
 }
 
 .job_img:nth-child(0){
-    background-image: url(/locksley/figma_pc_course/images/Ellipse2-1.png);
+    background-image: url(/locksley/figma_pc_course/images/icon-1.png);
 }
 .job_img:nth-child(1){
-    background-image: url(/locksley/figma_pc_course/images/Ellipse2-1.png);
+    background-image: url(/locksley/figma_pc_course/images/icon-2.png);
 }
 .job_img:nth-child(2){
-    background-image: url(/locksley/figma_pc_course/images/Ellipse2-1.png);
+    background-image: url(/locksley/figma_pc_course/images/icon-3.png);
 }
 
 .job_heading{
