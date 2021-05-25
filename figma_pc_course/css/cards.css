@@ -1,0 +1,166 @@
+*,
+body,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.75;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  background-color: #121212;
+}
+
+.container {
+  width: 95%;
+  height: 100%;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.row > .card {
+  border-color: #20d120;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 15px;
+  margin: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 300px;
+          flex: 1 0 300px;
+  min-height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: #20d120 0px 0px 25px 3px;
+          box-shadow: #20d120 0px 0px 25px 3px;
+  overflow: hidden;
+  -webkit-transition: 0.75s linear box-shadow, 0.4s ease transform;
+  transition: 0.75s linear box-shadow, 0.4s ease transform;
+}
+.row > .card > div {
+  border-color: transparent;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 15px;
+}
+.row > .card > header.card-header {
+  width: 100%;
+  min-height: 10%;
+  background: #1a1a1a;
+  padding: 10px 15px;
+}
+.row > .card > header.card-header > h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+.row > .card > .card-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  width: 100%;
+  overflow: hidden;
+}
+.row > .card > .card-footer {
+  width: 100%;
+  margin-top: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100px;
+          flex: 1 1 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: #333333 solid 2px;
+  background: #121212;
+  border-radius: 0px;
+  overflow: hidden;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+.row > .card > .card-footer button {
+  display: block;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  border: none;
+  outline: none;
+  background: #121212;
+  color: #333333;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px 0;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+.row > .card > .card-footer button:hover {
+  color: aliceblue;
+  -webkit-transform: scale(0.8, 0.8);
+          transform: scale(0.8, 0.8);
+}
+.row > .card:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+  -webkit-box-shadow: #20d120 0px 0px 40px 8px;
+          box-shadow: #20d120 0px 0px 40px 8px;
+}
+
+.card-content > table {
+  width: 100%;
+  height: 100%;
+}
+.card-content > table tr {
+  display: block;
+  width: 100%;
+  font-size: 26px;
+  line-height: 1.4;
+}
+.card-content > table tr td {
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1.4;
+  color: aliceblue;
+}
