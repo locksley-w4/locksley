@@ -1,0 +1,139 @@
+*,
+body,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.75;
+}
+
+@mixin border(
+  $borderColor: rgb(32, 209, 32),
+  $borderWidth: 4px,
+  $borderRadius: 15px,
+  $borderStyle: solid
+) {
+  border-color: $borderColor;
+  border-width: $borderWidth;
+  border-style: $borderStyle;
+  border-radius: $borderRadius;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  background-color: #121212;
+}
+.container {
+  width: 95%;
+  height: 100%;
+  padding: 50px;
+  margin: 0 auto;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > .card {
+    @include border();
+    margin: 20px;
+    flex: 1 0 300px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgb(32, 209, 32) 0px 0px 25px 3px;
+    overflow: hidden;
+    transition: 0.75s linear box-shadow, 0.4s ease transform;
+
+
+    & > div {
+      @include border(transparent, 4px, 15px);
+    }
+
+    & > header.card-header {
+      width: 100%;
+      min-height: 10%;
+      background: rgb(26, 26, 26);
+      padding: 10px 15px;
+
+      & > h3 {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.7;
+      }
+    }
+
+    & > .card-content {
+      flex: 1 0 auto;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    & > .card-footer{
+      width: 100%;
+      margin-top: 30px;
+      flex: 1 1 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: #333333 solid 2px;
+      background: #121212;
+      border-radius: 0px;
+      overflow: hidden;
+      transition: 0.5s ease all;
+    
+      & button{
+        display: block;
+        width: 100%;
+        flex: 1 0 auto;
+        border: none;
+        outline: none;
+        background: #121212;
+        color: #333333;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 15px 0;
+        transition: 0.5s ease all;
+
+        &:hover{
+color: aliceblue;
+transform: scale(0.8,0.8);
+       }
+      }
+    }
+
+    &:hover{
+      transform: scale(1.05,1.05);
+      box-shadow: rgb(32, 209, 32) 0px 0px 40px 8px;
+    }
+  }
+}
+
+.card-content > table {
+  width: 100%;
+  height: 100%;
+
+  & tr {
+    display: block;
+    width: 100%;
+    font-size: 26px;
+    line-height: 1.4;
+    & td{
+      display: block;
+      width: 100%;
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: 1.4;
+      color: aliceblue;
+    }
+  }
+}
