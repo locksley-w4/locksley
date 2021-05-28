@@ -28,6 +28,74 @@ font-weight: 700;
     display: flex;
     padding: 15px 16.25%;
 }
+/* 
+.popup{
+    position: fixed;
+    top: 13%;
+    left: 13%;
+    right: 13%;
+    bottom: 13%;
+    background: rgba(14, 43, 82, 0.8);
+    border: solid rgba(14, 43, 82) 5px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.popupheader{
+    flex: 0 0 10%;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-shadow: #fafafa 0px 0px 10px;
+    letter-spacing: 1.5px;
+}
+
+.popupbody{
+    width: 100%;
+    flex: 0 0 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10%;
+    color: red;
+    text-shadow: red 0px 0px 10px;  
+}
+
+.timer-set{
+    flex: 0 0 30%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 7%;
+
+}
+.timer-set h1{
+    font-size: 90px;    
+}
+
+.timer-set a{
+    background: none;
+    font-size: 30px;
+    color: red;
+    border-radius: 5px;
+    border: none;
+    width: 30px;
+    height: 30px;
+} */
+
+
 .container:first-child{
     flex-direction: column;
     align-items: stretch;
@@ -143,7 +211,7 @@ position: fixed;
 .start{
     width: 100%;
     flex: 1 0 110vh;
-    background-image: url(/locksley/figma_pc_course/images/main-screen__bgc.svg);
+    background-image: url(/figma_pc_course/images/main-screen__bgc.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -277,7 +345,7 @@ position: fixed;
 width: 100%;
 display: flex;
 flex-direction: column;
-background-image: url(/locksley/figma_pc_course/images/bgc.png);
+background-image: url(/figma_pc_course/images/bgc.png);
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: scroll;
@@ -299,7 +367,7 @@ overflow: hidden;
     margin: auto 0;
     flex: 0 0 500px;
     height: 500px;
-    background-image: url(/locksley/figma_pc_course/images/IMG_20210508_225738_080.png);
+    background-image: url(/figma_pc_course/images/IMG_20210508_225738_080.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: scroll;

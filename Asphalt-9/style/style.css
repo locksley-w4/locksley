@@ -1,0 +1,258 @@
+*,*::before,*::after{box-sizing: border-box;}/* Remove default padding */ul[class],ol[class]{padding: 0;}/* Remove default margin */body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd{margin: 0;}/* Set core body defaults */body{min-height: 100vh;scroll-behavior: smooth;text-rendering: optimizeSpeed;line-height: 1.5;}/* Remove list styles on ul, ol elements with a class attribute */ul[class],ol[class] {list-style: none;}/* A elements that don't have a class get default styles */a:not([class]){text-decoration-skip-ink: auto;}/* Make images easier to work with */img{max-width: 100%;display: block;}/* Natural flow and rhythm in articles by default */article > * + * {margin-top: 1em;} /* Inherit fonts for inputs and buttons */input,button,textarea,select {font: inherit;}
+
+/* STARTS HERE */
+
+.wrapper{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hello{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(/Asphalt-9/images/bg-3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    transform: scale(1,1);
+    animation-duration: 1s;
+    animation-name: bganim;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.hello::after{
+    content: '';
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg,black 1%, transparent );
+}
+.hi{
+    height: 60px;
+    width: 10%;
+    background: rgba(255, 255, 255, 0.9);
+    transform: skewX(-40deg) translateX(-30%);
+    animation-name: hianim;
+    animation-duration: 1.4s;
+    animation-delay: 0.9s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    padding-left: 20%;
+    overflow: hidden;
+}.hi:last-child{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    padding-left: 20%;
+    content: 'by locksley';
+    font-size: 36px;
+    color: black;
+    font-weight: 600;
+    font-family: italic;
+    height: 70px;
+    width: 5%;
+    background: rgba(255, 255, 255, 0.9);
+    transform: skewX(-40deg) translate(-30%, 60px);
+    animation-name: hianim2;
+}
+
+.navbar{
+    height: 100%;
+    width: 80%;
+    position: relative;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: skewX(40deg);
+}
+
+.nav_links{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav_links a{
+    color: black;
+    font-weight: 250;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+@keyframes hianim{
+    0%{
+        width: 30%;
+    }
+    100%{
+        width: 60%;
+    }
+}
+@keyframes hianim2{
+    0%{
+        width: 5%;
+    }
+    100%{
+        width: 50%;
+    }
+}
+
+@keyframes bganim{
+    0%{
+        transform: scale(1.2,1.1);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+.about_page{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url("/Asphalt-9/images/bg-4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about_page::before{
+    content: '';
+    position: absolute;
+    height: 40%;
+    top: 100vh;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, black 1%, transparent);
+}
+
+.cards{
+    position: relative;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: rgb(136, 136, 136, 0.5);
+    z-index: 100;
+    padding: 15px;
+    color: aliceblue;
+    border-radius: 10px;
+    flex: 0 0 280px;
+    min-height: 350px;
+    transition: 0.5s ease all 0.6s;
+    box-shadow: 0 0 15px 0 black;
+}
+
+.card_header{
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1.5;
+}
+.card-content{
+    flex: 1 0 300px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 1.4;
+    font-size: 30px;
+}
+
+.card:hover{
+    box-shadow: 0 0 25px 0 black;
+}
+
+/* .about_page:hover .card:nth-child(1),.about_page:hover .card:nth-child(2){
+    transform: scale(1,1);
+}
+.about_page:hover .card:nth-child(3),.about_page:hover .card:nth-child(4){
+    transform: scale(1,1);
+} */
+
+@media (max-width:1450px) {
+    .cards{
+        width: 1200px;
+    }
+    .card{
+        flex: 0 0 250px
+    }
+    @keyframes hianim{
+        0%{
+            width: 30%;
+        }
+        100%{
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width:1210px) {
+    .cards{
+        width: 1000px;
+    }
+    .card{
+        flex: 0 0 45%;
+        margin: 20px;
+    }
+    @keyframes hianim{
+        0%{
+            width: 30%;
+        }
+        100%{
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width:1010px) {
+    .cards{
+        width: 1000px;
+    }
+    .card{
+        flex: 0 0 95%;
+        margin: 20px;
+    }
+    @keyframes hianim{
+        0%{
+            width: 30%;
+        }
+        100%{
+            width: 100%;
+        }
+    }
+    .hi{
+        padding-left: 30%;
+    }
+}
+
+@media (max-width:862px) {
+    @keyframes hianim{
+        0%{
+            width: 30%;
+        }
+        100%{
+            width: 170%;
+        }
+    }
+    .card{
+        margin: 20px auto;
+    }
+    .nav_links{
+        display: none;
+    }
+}
