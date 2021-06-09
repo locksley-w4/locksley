@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+* {
+  opacity: 1;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #1f2326;
+  width: 100vw;
+  height: 10vh;
+  overflow: hidden;
+}
+
+.circle {
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
+}
+.circle:nth-child(1) {
+  height: 55vw;
+  width: 55vw;
+  top: -40%;
+  left: -15%;
+  background: #ff4656;
+}
+.circle:nth-child(2) {
+  top: 5%;
+  right: 6.5%;
+  width: 2vw;
+  height: 2vw;
+  background: #ff4656;
+}
+.circle:nth-child(3) {
+  top: 13%;
+  right: 5%;
+  width: 6vw;
+  height: 6vw;
+  background: #efefef;
+}
+.circle:nth-child(4) {
+  top: 27%;
+  right: 3%;
+  width: 3vw;
+  height: 3vw;
+  background: #505155;
+}
+.circle:nth-child(5) {
+  width: 8vw;
+  height: 8vw;
+  bottom: -3.5vw;
+  left: 10%;
+  background: #efefef;
+}
+.circle:nth-child(6) {
+  bottom: 10%;
+  left: 2%;
+  width: 4vw;
+  height: 4vw;
+  background: #505155;
+}
+.circle:nth-child(7) {
+  width: 35vw;
+  height: 35vw;
+  bottom: -25%;
+  right: -10%;
+  background: #292c31;
+}
+
+.box {
+  position: absolute;
+  z-index: 2;
+  border-radius: 15px;
+  top: 5%;
+  right: 10%;
+  bottom: 5%;
+  left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #1f2326;
+  -webkit-box-shadow: 0 0 15px 0px rgba(12, 12, 12, 0.603);
+          box-shadow: 0 0 15px 0px rgba(12, 12, 12, 0.603);
+}
+.box .header {
+  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 5%;
+          flex: 0 0 5%;
+  border-radius: 15px;
+  background-color: #1f2326;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.box .box_body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 80%;
+          flex: 1 0 80%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1000;
+  background-image: url("../../images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(255, 70, 86, 0.99);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.box .box_body .text_decor {
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  -webkit-transform: translateY(-50%) rotate(90deg);
+          transform: translateY(-50%) rotate(90deg);
+  background-image: url("../../images/");
+}
+.box .box_body::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../images/elements.png");
+  background-size: contain;
+}
+.box .box_body .girl_image {
+  z-index: 1001;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: -5%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.box .box_body .girl_image img {
+  position: relative;
+  top: -10%;
+  bottom: 0;
+  height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.box .footer {
+  border-radius: 15px;
+  background-color: #efefef;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 5%;
+          flex: 0 0 5%;
+}
+
+.content {
+  position: absolute;
+  background: #efefef;
+  left: 5%;
+  top: 10%;
+  right: 40%;
+  bottom: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.content .content_text {
+  padding: 6%;
+  width: 100%;
+  font-size: 12px;
+  letter-spacing: 1.2;
+  line-height: 1.3;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 43%;
+          flex: 1 1 43%;
+  overflow-y: hidden;
+}
+.content .content_text h3 {
+  font-weight: 600;
+  font-size: 35%;
+}
+.content .content_slider {
+  -webkit-box-flex: 1.5;
+      -ms-flex: 1.5 1 45%;
+          flex: 1.5 1 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.content .content_slider .slider_img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
+  position: relative;
+  left: -5%;
+  top: 0;
+  -webkit-animation-name: image;
+          animation-name: image;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.content .content_slider .slider_img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-animation-name: image;
+          animation-name: image;
+  -webkit-animation-duration: 0.6 s;
+          animation-duration: 0.6 s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  max-width: 100%;
+}
+.content .content_slider .slider_info {
+  -webkit-box-flex: 1.5;
+      -ms-flex: 1.5 1 40%;
+          flex: 1.5 1 40%;
+  font-size: 80%;
+  line-height: 1.7;
+}
+.content .content_slider .slider_info h3 {
+  font-weight: 1900;
+  font-size: 26px;
+}
+.content .content_slider .slider_info span {
+  color: #c4c4c4;
+  margin-right: 7px;
+}
+.content .content_slider .slider_buttons {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10%;
+          flex: 1 1 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.content .content_slider .slider_buttons button {
+  border: 0;
+  max-zoom: 200%;
+  margin-right: 10%;
+  outline: 0;
+  height: 20%;
+  background-color: #ff4656;
+}
+.content .names {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #1f2326;
+}
+.content .names img {
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 24.99%;
+}
+.content .names .line {
+  width: 5px;
+  height: 80%;
+  z-index: 1100;
+  margin: auto 0;
+  background-color: #ff4656;
+}
+
+.card_line {
+  width: 55vw;
+  z-index: 10000;
+  background: #000;
+  position: absolute;
+  left: -3%;
+  bottom: -3%;
+  height: 20vh;
+}
+
+.card {
+  background-color: #f8f8f8;
+}
+
+@-webkit-keyframes image {
+  0% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes image {
+  0% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}

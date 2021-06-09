@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+} /* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+} /* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+} /* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+} /* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+} /* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+} /* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+} /* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+} /* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+* {
+  opacity: 1;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #1f2326;
+  width: 100vw;
+  height: 10vh;
+  overflow: hidden;
+}
+
+.circle {
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
+
+  &:nth-child(1) {
+    height: 55vw;
+    width: 55vw;
+    top: -40%;
+    left: -15%;
+    background: #ff4656;
+  }
+  &:nth-child(2) {
+    top: 5%;
+    right: 6.5%;
+    width: 2vw;
+    height: 2vw;
+    background: #ff4656;
+  }
+  &:nth-child(3) {
+    top: 13%;
+    right: 5%;
+    width: 6vw;
+    height: 6vw;
+    background: #efefef;
+  }
+  &:nth-child(4) {
+    top: 27%;
+    right: 3%;
+    width: 3vw;
+    height: 3vw;
+    background: #505155;
+  }
+  &:nth-child(5) {
+    width: 8vw;
+    height: 8vw;
+    bottom: -3.5vw;
+    left: 10%;
+    background: #efefef;
+  }
+  &:nth-child(6) {
+    bottom: 10%;
+    left: 2%;
+    width: 4vw;
+    height: 4vw;
+    background: #505155;
+  }
+  &:nth-child(7) {
+    width: 35vw;
+    height: 35vw;
+    bottom: -25%;
+    right: -10%;
+    background: #292c31;
+  }
+}
+
+.box {
+  position: absolute;
+  z-index: 2;
+  border-radius: 15px;
+  top: 5%;
+  right: 10%;
+  bottom: 5%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1f2326;
+  box-shadow: 0 0 15px 0px rgba(12, 12, 12, 0.603);
+
+  .header {
+    width: 100%;
+    flex: 0 0 5%;
+    border-radius: 15px;
+    background-color: #1f2326;
+    flex-shrink: 0;
+  }
+
+  .box_body {
+    flex: 1 0 80%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1000;
+    background-image: url("../../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(255, 70, 86, 0.99);
+    display: flex;
+    align-items: center;
+
+    .text_decor {
+      position: absolute;
+      top: 50%;
+      right: -5%;
+      transform: translateY(-50%) rotate(90deg);
+      background-image: url("../../images/");
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("../../images/elements.png");
+      background-size: contain;
+    }
+
+    .girl_image {
+      z-index: 1001;
+      flex-basis: auto;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      bottom: -5%;
+      object-fit: contain;
+      object-position: bottom;
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      // background-position: left;
+
+      & img {
+        position: relative;
+        top: -10%;
+        bottom: 0;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: bottom;
+      }
+    }
+  }
+  .footer {
+    border-radius: 15px;
+    background-color: #efefef;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    flex: 0 0 5%;
+  }
+}
+
+.content {
+  position: absolute;
+  background: #efefef;
+  left: 5%;
+  top: 10%;
+  right: 40%;
+  bottom: 20%;
+  display: flex;
+  flex-direction: column;
+
+  .content_text {
+    padding: 6%;
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 1.2;
+    line-height: 1.3;
+    flex: 1 1 43%;
+    overflow-y: hidden;
+
+    & h3 {
+      font-weight: 600;
+      font-size: 35%;
+    }
+  }
+
+  .content_slider {
+    flex: 1.5 1 45%;
+    display: flex;
+
+    .slider_img {
+      flex: 1 1 40%;
+      position: relative;
+      left: -5%;
+      top: 0;
+      animation-name: image;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+
+      & img {
+        object-fit: contain;
+        transform: scale(1,1);
+        animation-name: image;
+        animation-duration: 0.6 s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        max-width: 100%;
+      }
+    }
+
+    .slider_info {
+      flex: 1.5 1 40%;
+      font-size: 80%;
+      line-height: 1.7;
+
+      & h3 {
+        font-weight: 1900;
+        font-size: 26px;
+      }
+
+      & span {
+        color: #c4c4c4;
+        margin-right: 7px;
+      }
+    }
+    .slider_buttons {
+      flex: 1 1 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
+
+      & button {
+        border: 0;
+        max-zoom: 200%;
+        margin-right: 10%;
+        outline: 0;
+        height: 20%;
+        background-color: #ff4656;
+      }
+    }
+  }
+
+  .names {
+    flex: 0 0 10%;
+    width: 100%;
+    display: flex;
+    background-color: #1f2326;
+
+    & img {
+      max-height: 100%;
+      object-fit: contain;
+      width: 24.99%;
+    }
+    .line {
+      width: 5px;
+      height: 80%;
+      z-index: 1100;
+      margin: auto 0;
+      background-color: #ff4656;
+    }
+  }
+}
+
+
+.card_line{
+  width: 55vw;
+  z-index: 10000;
+  background: #000;
+  position: absolute;
+  left: -3%;
+  bottom: -3%;
+  height: 20vh;
+}
+.card{
+  background-color: #f8f8f8;
+
+}
+@keyframes image {
+  0%{
+transform: scale(1.1,1.1);
+  }
+  100%{
+transform: scale(1,1);
+  }
+}
