@@ -42,7 +42,7 @@
 }
 .bar {
   /* background-color: rgb(80, 80, 80); */
-  background-image: url(../textures/item/arrow.png);
+  background-image: url(../sprites/arrow.png);
   background-size: contain;
   background-repeat: no-repeat;
   transform: rotate(315deg) scaleX(-1);
@@ -54,7 +54,7 @@
 }
 .cactus {
   /* background-color: rgb(80, 80, 80); */
-  background-image: url(../textures/block/cactus_side.png);
+  background-image: url(../sprites/cactus_side.png);
   background-size: 100%;
   /* background-repeat: no-repeat; */
   padding: 5px;
@@ -253,7 +253,7 @@ button.settings {
   right: 15px;
   width: 50px;
   height: 50px;
-  background-image: url(../textures/block/crafting_table_top.png);
+  background-image: url(../sprites/crafting_table_top.png);
   background-size: contain;
   background-repeat: no-repeat;
   outline: none;
