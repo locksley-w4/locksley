@@ -170,7 +170,7 @@ function getNewGroundPic() {
     result.classList.add("groundMove")
     return result
 }
-let nogGroundMove = true;
+let nogGroundMove = false;
 let groundPic = Array.from(document.querySelectorAll(".groundMove"));
 let picWidth = visualViewport.width * 2
 // let groundMoveInterval = setInterval(groundMove, 3000)
