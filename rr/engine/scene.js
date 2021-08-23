@@ -58,7 +58,7 @@ class Cactus {
     }
 }
 class Hole {
-    constructor(width = 60, height = groundBounding.bottom) {
+    constructor(width = 70, height = 300) {
         this.html = document.createElement("div");
         this.html.style.width = width + "px";
         this.html.style.height = height + "px";
@@ -85,8 +85,8 @@ let obstacleSpawnerInterval = setInterval(obstacleSpawner, barSpeed * 0.8);
 function obstacleSpawner() {
     let obstacle = null;
     let magicNumber = rand(0, 50);
-    if (magicNumber <= 25) obstacle = new Bar(40, 40, rand(groundBounding.top - player.clientHeight * 1.5, groundBounding.top - 50), visualViewport.width + 5)
-    else if (magicNumber <= 40) obstacle = new Cactus(rand(40, 80), rand(20, 80), visualViewport.width + 5)
+    if (magicNumber <= 45) obstacle = new Bar(40, 40, rand(groundBounding.top - player.clientHeight * 1.5, groundBounding.top - 50), visualViewport.width + 5)
+//     else if (magicNumber <= 40) obstacle = new Cactus(rand(40, 80), rand(20, 80), visualViewport.width + 5)
     else obstacle = new Hole()
     // let obstacle = new Bar(rand(30, visualViewport.width * 0.09), 10, rand(groundBounding.top - player.clientHeight + 5, groundBounding.top - 20), visualViewport.width + 5)
     // let obstacle = new Hole()
