@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("../../fonts/Montserrat-Bold.ttf");
+@import url("../../fonts/Montserrat-ExtraBold.ttf");
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+* {
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 /* Remove default padding */
@@ -209,7 +215,7 @@ body {
       flex-basis: auto;
   height: 100%;
   position: absolute;
-  right: 0;
+  right: -5%;
   bottom: -5%;
   -o-object-fit: contain;
      object-fit: contain;
@@ -217,15 +223,17 @@ body {
      object-position: bottom;
 }
 .box .box_body .girl_image img {
+  display: block;
   position: relative;
   top: -10%;
   bottom: 0;
+  right: 0;
   height: 100%;
   max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  -o-object-position: bottom;
-     object-position: bottom;
+  -o-object-position: bottom right;
+     object-position: bottom right;
 }
 .box .footer {
   border-radius: 15px;
@@ -240,10 +248,10 @@ body {
 .content {
   position: absolute;
   background: #efefef;
-  left: 5%;
-  top: 10%;
+  left: 4.6%;
+  top: 7%;
   right: 40%;
-  bottom: 20%;
+  bottom: 17%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,27 +266,30 @@ body {
   font-size: 12px;
   letter-spacing: 1.2;
   line-height: 1.3;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 43%;
-          flex: 1 1 43%;
-  overflow-y: hidden;
+  -webkit-box-flex: 1.7;
+      -ms-flex: 1.7 1 48%;
+          flex: 1.7 1 48%;
+  overflow: auto;
 }
 .content .content_text h3 {
-  font-weight: 600;
+  font-weight: 1000;
+  font-family: "Montserrat-Bold", sans-serif;
   font-size: 35%;
 }
 .content .content_slider {
-  -webkit-box-flex: 1.5;
-      -ms-flex: 1.5 1 45%;
-          flex: 1.5 1 45%;
+  margin-top: 5px;
+  -webkit-box-flex: 1.2;
+      -ms-flex: 1.2 1 35%;
+          flex: 1.2 1 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 .content .content_slider .slider_img {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 40%;
-          flex: 1 1 40%;
+  -webkit-box-flex: 1.3;
+      -ms-flex: 1.3 1 60%;
+          flex: 1.3 1 60%;
+  max-width: 50%;
   position: relative;
   left: -5%;
   top: 0;
@@ -307,14 +318,16 @@ body {
   max-width: 100%;
 }
 .content .content_slider .slider_info {
-  -webkit-box-flex: 1.5;
-      -ms-flex: 1.5 1 40%;
-          flex: 1.5 1 40%;
-  font-size: 80%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+  margin-left: auto;
+  font-size: 15px;
   line-height: 1.7;
 }
 .content .content_slider .slider_info h3 {
-  font-weight: 1900;
+  font-weight: 1000;
+  font-family: "Montserrat-ExtraBold", sans-serif;
   font-size: 26px;
 }
 .content .content_slider .slider_info span {
@@ -325,6 +338,10 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 10%;
           flex: 1 1 10%;
+  height: 100%;
+}
+.content .content_slider .slider_buttons ul {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,19 +349,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  list-style-type: none;
 }
-.content .content_slider .slider_buttons button {
-  border: 0;
-  max-zoom: 200%;
-  margin-right: 10%;
-  outline: 0;
-  height: 20%;
-  background-color: #ff4656;
+.content .content_slider .slider_buttons ul li {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  width: 5%;
+}
+.content .content_slider .slider_buttons ul li button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: #c4c4c4;
 }
 .content .names {
   -webkit-box-flex: 0;
@@ -371,37 +396,181 @@ body {
 }
 
 .card_line {
-  width: 55vw;
+  width: 70vw;
   z-index: 10000;
-  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  left: -3%;
+  left: -7%;
   bottom: -3%;
-  height: 20vh;
+  height: 15vh;
 }
 
 .card {
   background-color: #f8f8f8;
+  width: 27%;
+  text-transform: uppercase;
+  position: absolute;
+  height: 100%;
+  border-top-left-radius: 15px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Montserrat-Bold", sans-serif;
+  -webkit-animation-name: card_move;
+          animation-name: card_move;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.card:nth-child(1) {
+  left: 0;
+}
+.card:nth-child(2) {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.card:nth-child(3) {
+  right: 0;
+}
+.card .card_name {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.card .card_name h2 {
+  font-size: 22px;
+  color: #c4c4c4;
+  font-weight: 1000;
+}
+.card .card_name h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.card .card_cost {
+  padding: 5px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 70%;
+  background: #ff4656;
+  font-weight: bold;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.card .card_cost span {
+  padding: 5px;
+}
+.card .card_cost span img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.card .card_cost strong {
+  font-size: 13px;
+  color: #efefef;
+  margin-bottom: 5px;
+}
+.card .card_img {
+  position: absolute;
+  width: 80%;
+  z-index: 1000;
+  top: 15%;
+  right: -7%;
+}
+.card .card_img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
 }
 
 @-webkit-keyframes image {
   0% {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1) translateX(10%);
+            transform: scale(1.1, 1.1) translateX(10%);
   }
   100% {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    -webkit-transform: scale(1, 1) translateX(0);
+            transform: scale(1, 1) translateX(0);
   }
 }
 
 @keyframes image {
   0% {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1) translateX(10%);
+            transform: scale(1.1, 1.1) translateX(10%);
   }
   100% {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    -webkit-transform: scale(1, 1) translateX(0);
+            transform: scale(1, 1) translateX(0);
+  }
+}
+@-webkit-keyframes card_move {
+  0% {
+    margin-left: auto;
+  }
+  100% {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+@keyframes card_move {
+  0% {
+    margin-left: auto;
+  }
+  100% {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1451px) {
+  .box {
+    right: 5%;
+    left: 5%;
+  }
+  .box .card_line {
+    width: 70vw;
+    left: -5%;
+  }
+  .box .card_line .card {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1101px) {
+  .girl_image {
+    position: absolute;
+    right: -10%;
+  }
+  .girl_image img {
+    right: -10%;
   }
 }

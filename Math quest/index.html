@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+
+  <body>
+    <button class="resetButton" title="Reset"></button>
+    <button class="menuShowBtn" title="Show menu"></button>
+    <div class="menu">
+      <!-- <div class="endgame-screen">Game Over</div> -->
+      <div class="gridSettingName">
+        <h2>Theme</h2>
+      </div>
+      <div class="gridSetting" id="theme">
+        <label for="light">light</label
+        ><input type="radio" name="theme" id="light" checked />
+        <label for="dark">dark</label
+        ><input type="radio" name="theme" id="dark" />
+        <label for="red">red</label
+        ><input type="radio" name="theme" id="red" />
+        <label for="blue">blue</label
+        ><input type="radio" name="theme" id="blue" />
+      </div>
+      <div class="gridSettingName">
+        <h2>Animations` delay</h2>
+      </div>
+      <div class="gridSetting" id="animedelay">
+        <div class="custom-range">
+          <div class="innerElement" draggable="false" data-range="0"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scene"></div>
+    <div class="box">
+      <span id="quest"></span>
+      <span id="count">0</span>
+      <button id="btn"></button>
+      <button id="btn"></button>
+      <button id="btn"></button>
+      <button id="btn"></button>
+    </div>
+    <script src="../parallax.js/parallax.min.js"></script>
+    <script src="anime.js/anime.min.js"></script>
+    <script src="random.js"></script>
+    <script src="main.js "></script>
+  </body>
+</html>

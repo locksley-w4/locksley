@@ -1,0 +1,458 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: ease all;
+  transition-duration: 0.4s;
+  color: inherit;
+}
+$mainColorLight: #f0f8ff;
+$secondaryColorLight: #7ee4ac;
+$extentionalColorLight: #fbfffe;
+
+$mainColorDark: #1e1f20;
+$secondaryColorDark: #d3d3d3;
+$extentionalColorDark: #0b0d0f;
+$mainColorRed: #f16767;
+$secondaryColorRed: #f0dddd;
+$extentionalColorRed: #ff8585;
+
+$mainColorBlue: #46a8fd;
+$secondaryColorBlue: #fffc5d;
+$extentionalColorBlue: #83c5ff;
+
+body {
+  background-color: $mainColorLight;
+  &.light {
+    background-color: $mainColorLight;
+  }
+  &.dark {
+    background-color: $mainColorDark;
+  }
+  &.red {
+    background-color: $mainColorRed;
+  }
+  &.blue {
+    background-color: $mainColorBlue;
+  }
+
+  &.rightAnswerScreen {
+    background-color: rgb(104, 235, 104);
+  }
+  &.wrongAnswerScreen {
+    background-color: rgb(235, 104, 104);
+  }
+}
+button.menuShowBtn {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  border-radius: 50px;
+  background-color: $secondaryColorLight;
+  z-index: 10001;
+  &.light {
+    background-color: $secondaryColorLight;
+  }
+  &.dark {
+    background-color: $secondaryColorDark;
+  }
+  &.red {
+    background-color: $secondaryColorRed;
+  }
+  &.blue {
+    background-color: $secondaryColorBlue;
+  }
+  border: none;
+  outline: none;
+  &.active {
+    background-color: #ff7e7e;
+  }
+}
+button.resetButton {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  background-color: #ff7e7e;
+}
+
+.box {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  padding: 15px;
+  border-radius: 50px;
+  color: $mainColorLight;
+  background: linear-gradient(
+    45deg,
+    $extentionalColorLight,
+    $mainColorLight,
+    $extentionalColorLight
+  );
+  &.light {
+    background: linear-gradient(
+      45deg,
+      $extentionalColorLight,
+      $mainColorLight,
+      $extentionalColorLight
+    );
+    color: $mainColorLight;
+  }
+  &.dark {
+    background: linear-gradient(
+      45deg,
+      $extentionalColorDark,
+      $mainColorDark,
+      $extentionalColorDark
+    );
+    color: $mainColorDark;
+  }
+  &.red {
+    background: linear-gradient(
+      45deg,
+      $extentionalColorRed,
+      $mainColorRed,
+      $extentionalColorRed
+    );
+    color: $mainColorRed;
+  }
+  &.blue {
+    background: linear-gradient(
+      45deg,
+      $extentionalColorBlue,
+      $mainColorBlue,
+      $extentionalColorBlue
+    );
+    color: $mainColorBlue;
+  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 0.35fr;
+  justify-items: center;
+  align-items: center;
+  span#quest {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-size: calc(120px + 120 * (100vw / 2000));
+    font-weight: 500;
+    color: $secondaryColorLight;
+    &.light {
+      color: $secondaryColorLight;
+    }
+    &.dark {
+      color: $secondaryColorDark;
+    }
+    &.red {
+      color: $secondaryColorRed;
+    }
+    &.blue {
+      color: $secondaryColorBlue;
+    }
+  }
+  span#count {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    font-size: 60px;
+    font-weight: 700;
+    color: $secondaryColorLight;
+    &.light {
+      color: $secondaryColorLight;
+    }
+    &.dark {
+      color: $secondaryColorDark;
+    }
+    &.red {
+      color: $secondaryColorRed;
+    }
+    &.blue {
+      color: $secondaryColorBlue;
+    }
+  }
+  button#btn {
+    justify-self: stretch;
+    margin: 0 5px;
+    align-self: stretch;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 66px;
+    text-overflow: ellipsis;
+    border-radius: 15px 15px 20px 20px;
+    color: inherit;
+    background-color: $secondaryColorLight;
+    &.light {
+      background-color: $secondaryColorLight;
+    }
+    &.dark {
+      background-color: $secondaryColorDark;
+    }
+    &.red {
+      background-color: $secondaryColorRed;
+    }
+    &.blue {
+      background-color: $secondaryColorBlue;
+    }
+  }
+}
+
+.endgame-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $mainColorLight;
+  color: $secondaryColorLight;
+  &.light {
+    background-color: $mainColorLight;
+    color: $secondaryColorLight;
+  }
+  &.dark {
+    background-color: $mainColorDark;
+    color: $secondaryColorDark;
+  }
+  &.red {
+    background-color: $mainColorRed;
+    color: $secondaryColorRed;
+  }
+  &.blue {
+    background-color: $mainColorBlue;
+    color: $secondaryColorBlue;
+  }
+  display: none;
+  &.active {
+    display: flex;
+  }
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 950px) {
+  .box {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    background-color: transparent;
+    &.light {
+      background-color: transparent;
+    }
+    &.dark {
+      background-color: transparent;
+    }
+    &.red {
+      background-color: transparent;
+    }
+    &.blue {
+      background-color: transparent;
+    }
+    button#btn {
+      font-size: 46px;
+    }
+    span#quest {
+      font-size: calc(100px + 100 * (100vw / 1050));
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+    span#count {
+      position: absolute;
+      font-size: 5rem;
+      align-self: flex-start;
+      justify-self: end;
+    }
+  }
+  .gridSetting#theme label {
+    width: 50%;
+  }
+  button.resetButton {
+    right: 100%;
+    transform: translateX(110px);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .box {
+    span#quest {
+      font-size: calc(70px + 90 * (100vw / 850));
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .box {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% repeat(4, 1fr);
+    row-gap: 15px;
+    button#btn {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .gridSetting#theme label {
+    width: 100%;
+  }
+}
+
+.menu {
+  transition: 0.3s ease all;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $mainColorLight;
+  &.light {
+    background-color: $mainColorLight;
+  }
+  &.dark {
+    background-color: $mainColorDark;
+  }
+  &.red {
+    background-color: $mainColorRed;
+  }
+  &.blue {
+    background-color: $mainColorBlue;
+  }
+  display: none;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(100, 400);
+  overflow: auto;
+  z-index: 10000;
+  opacity: 0;
+  transform: scale(0);
+  padding: 10%;
+  &.active {
+    display: grid;
+  }
+  a {
+    font-size: 46px;
+    color: $mainColorLight;
+    &.light {
+      background-color: $mainColorDark;
+    }
+    &.dark {
+      background-color: $mainColorLight;
+    }
+    &.red {
+      background-color: $mainColorBlue;
+    }
+    &.blue {
+      background-color: $mainColorRed;
+    }
+    text-transform: capitalize;
+  }
+}
+
+.gridSettingName {
+  // border-top: 2px solid ;
+  // border-bottom: 2px solid ;
+  padding: 15px;
+  text-transform: capitalize;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $secondaryColorLight;
+  &.light {
+    color: $secondaryColorLight;
+    border-color: $secondaryColorLight;
+  }
+  &.dark {
+    color: $secondaryColorDark;
+    border-color: $secondaryColorDark;
+  }
+  &.red {
+    color: $secondaryColorRed;
+    border-color: $secondaryColorRed;
+  }
+  &.blue {
+    color: $secondaryColorBlue;
+    border-color: $secondaryColorBlue;
+  }
+  font-size: 36px;
+}
+.gridSetting {
+  // border-top: 2px solid black;
+  // border-bottom: 2px solid black;
+  padding: 15px;
+}
+.gridSetting#theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  & input[type="radio"] {
+    display: none;
+  }
+  & label {
+    display: inline-block;
+    text-transform: capitalize;
+    text-align: center;
+    min-width: 18vw;
+    font-size: 50px;
+    font-weight: 500;
+    user-select: none;
+    flex: 0 0 auto;
+  }
+  & label[for="light"] {
+    color: #b4ffb4;
+  }
+  & label[for="dark"] {
+    color: #37383b;
+  }
+  & label[for="red"] {
+    color: #ff9d9d;
+  }
+  & label[for="blue"] {
+    color: #648597;
+  }
+}
+
+.custom-range {
+  width: 100%;
+  height: 70px;
+  background-color: #e6e6e6;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  & .innerElement {
+    width: 50%;
+    height: 100%;
+    background-color: #d3d3d3;
+    transition: 0.1s all linear;
+  }
+}
+
+.scene {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  background: transparent;
+  z-index: -1;
+  & div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: $secondaryColorLight;
+  }
+}

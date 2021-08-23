@@ -1,30 +1,12 @@
-const el = $(".el");
+const canvas = document.querySelector("canvas#paint"),
+    ctx = canvas.getContext("2d");
+let gradient = ctx.createLinearGradient(15, 15, 115, 15)
 
-const paint = $(".paint");
+gradient.addColorStop(0, "magenta")
+gradient.addColorStop(.5, "blue")
+gradient.addColorStop(1, "red")
+ctx.fillStyle = "#000";
 
-let elWidth = parseInt(el.css("width"));
-
-let elHeight = parseInt(el.css("height"));
-
-// let elWidth = parseInt(prompt("Введите ширину"));
-
-// let elHeight = parseInt(prompt("Введите высоту"));
-
-let elems = "";
-
-
-
-for (let i = elHeight; i < parseInt(paint.css("height")); i += elHeight) {
-    $("table").append("<tr>") 
-    for(let k = elWidth; k < parseInt(paint.css("width")); k += elWidth){
-    //    paint.append("<div class='el'></div>");
-
-    $("table").append("<td height='10' width='10'></td>") 
-    }
-    $("table").append("</tr>") 
-
-}
-// $("table").html(elems);
-console.log(elems)
-
-// console.log(el.css("width"))
+// ctx.fillRect(15, 15, 100, 100)
+ctx.arc(400, 400, 100, 0, Math.PI)
+console.log(Math.PI);
