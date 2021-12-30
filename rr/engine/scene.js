@@ -80,6 +80,7 @@ class Hole {
 }
 let cloudSpawnerInterval = setInterval(cloudSpawner, 3000)
 let nocloud = false
+let countinterval = setInterval(countfn, 100);
 
 let obstacleSpawnerInterval = setInterval(obstacleSpawner, barSpeed * 0.8);
 function obstacleSpawner() {
@@ -132,9 +133,10 @@ function cloudSpawner() {
     }, 50);
 }
 function gameover() {
-    window.navigator.vibrate(300)
+    window.navigator.vibrate(50)
     gameoverScreen.style.display = "flex"
     gameoverScreenText.innerHTML = "Game Over"
+    count.innerHTML = 0;
     setTimeout(() => {
         player.style.top = groundBounding.top - player.clientHeight + "px"
     }, 500);
@@ -142,6 +144,7 @@ function gameover() {
 
     clearInterval(cloudSpawnerInterval)
     clearInterval(obstacleSpawnerInterval)
+    clearInterval(countinterval)
     anime({
         targets: menuArrow,
         bottom: "10vh",
@@ -159,6 +162,7 @@ gameoverScreen.children[0].addEventListener("click", () => {
     clearInterval(obstacleSpawnerInterval)
     cloudSpawnerInterval = setInterval(cloudSpawner, 3000)
     obstacleSpawnerInterval = setInterval(obstacleSpawner, barSpeed * 0.8);
+    countinterval = setInterval(countfn, 100);
 
     //for animation
     // menuArrow.style.bottom = "5%"
@@ -198,3 +202,8 @@ function groundMove() {
     }, barSpeed * 2);
 }
 groundMove()
+
+const count = document.querySelector("h2.count");
+function countfn() {
+    count.innerHTML = +count.innerHTML + 1
+}

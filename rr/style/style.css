@@ -18,7 +18,15 @@
   display: flex;
   overflow: hidden;
 }
-
+h2.count {
+  color: rgb(245, 101, 101);
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 15px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
 .ground {
   position: absolute;
   height: 40%;
@@ -78,7 +86,9 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #85fd75;
+  background-image: url(../sprites/7bc2d96b5459e7b087d5812e9d77b09e.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #f0f8ff;
   font-size: 46px;
   display: none;
@@ -99,7 +109,8 @@ button.restartbtn {
   display: flex;
   outline: none;
   border: none;
-  background: linear-gradient(0deg, #4ae436, transparent);
+  /* background: linear-gradient(0deg, #4ae436, transparent); */
+  background: transparent;
   position: absolute;
   height: 30vh;
   width: 100%;

@@ -116,13 +116,13 @@ function jump(_el) {
 }
 
 function jumpEvent(e) {
-    if (e.key === " " && parseInt(player.getBoundingClientRect().bottom) >= parseInt(groundBounding.top - 3) && e.path.indexOf(pauseBtn) === -1 && e.path.indexOf(pauseMenuBtn) === -1) {
+    if (e.key === " " && parseInt(player.getBoundingClientRect().bottom) >= parseInt(groundBounding.top - 3) && e.path.indexOf(document.querySelector("button.settings")) === -1) {
         jump(player);
         jumpingAnim()
     }
 }
 function jumpEventMobile(e) {
-    if (parseInt(player.getBoundingClientRect().bottom) >= parseInt(groundBounding.top - 3) && e.path.indexOf(pauseBtn) === -1 && e.path.indexOf(pauseMenuBtn) === -1) {
+    if (parseInt(player.getBoundingClientRect().bottom) >= parseInt(groundBounding.top - 3) && e.path.indexOf(document.querySelector("button.settings")) === -1) {
         // console.log(e);
         jump(player);
         jumpingAnim()
