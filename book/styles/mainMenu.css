@@ -35,9 +35,6 @@ body {
 
 .face {
   margin-top: 30px;
-  -webkit-box-flex: 45vh;
-      -ms-flex: 45vh 1 1;
-          flex: 45vh 1 1;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -52,18 +49,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.face .logo {
-  width: 300px;
-  height: 300px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("../images/icon-3.png");
-}
-.face .name h3 {
-  font-size: 56px;
-  font-weight: 600;
-  color: #3f975c;
+.face .name h1 {
+  font-size: 76px;
+  font-weight: 700;
+  color: #686868;
 }
 
 .bookline {
@@ -85,13 +74,13 @@ body {
       -ms-flex: 300px 1 1;
           flex: 300px 1 1;
   margin: 25px;
-  height: 400px;
+  min-height: 400px;
   border-radius: 15px;
-  overflow: hidden;
-  background-color: #947457;
+  background-color: #aaaaaa79;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -99,15 +88,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
 }
 .bookline .book .bookname {
+  padding: 15px;
   width: 100%;
 }
 .bookline .book .bookname h3 {
-  font-size: 36px;
+  font-size: 30px;
   color: white;
   text-align: center;
 }
@@ -116,6 +103,7 @@ body {
   -webkit-box-flex: 80%;
       -ms-flex: 80% 1 0px;
           flex: 80% 1 0;
+  min-height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -125,36 +113,34 @@ body {
 }
 
 .controls {
-  position: absolute;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 0;
-  left: 0;
-  border-radius: 15px;
-  display: none;
-  z-index: 1000;
-  background-color: rgba(61, 61, 61, 0.24);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  width: 100%;
 }
-.controls a.controls {
-  display: inline-block;
-  position: relative;
-  background-color: transparent;
-  color: #f0f8ff;
-  text-decoration: none;
-  font-weight: 800;
+.controls button {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-box-flex: 1;
+      -ms-flex: auto 1 0px;
+          flex: auto 1 0;
+  height: 100%;
   font-size: 36px;
-  letter-spacing: 1.8;
-  margin-bottom: 30px;
-  pointer-events: all;
-}
-.controls span.controls {
-  color: #b0b3b6;
+  color: #f1f1f1;
   font-weight: 600;
-  font-size: 26px;
-  letter-spacing: 1.2;
-  text-align: center;
+  padding-left: 30px;
+}
+.controls button img {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+.controls a {
+  -webkit-box-flex: 80%;
+      -ms-flex: 80% 0 0px;
+          flex: 80% 0 0;
+  border-right: 6px #9c9c9c5d solid;
+  pointer-events: all;
 }
