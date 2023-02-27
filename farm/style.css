@@ -1,0 +1,194 @@
+*,
+body,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  /* flex-wrap: 10vw; */
+}
+section.grid {
+  display: grid;
+  width: 1200px;
+  height: 600px;
+  grid-template: repeat(12, 50px) / repeat(12, 100px);
+}
+.test{
+  position: fixed;
+  width: 1200px;
+  height: 600px;
+}
+.farmLand {
+  grid-column: span 11;
+  grid-row: span 12;
+  justify-self: stretch;
+  align-self: stretch;
+  position: relative;
+  padding: 15px;
+  background-color: rgb(81, 218, 51);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 15px;
+}
+.lake {
+  justify-self: stretch;
+  align-self: stretch;
+  background-color: blue;
+}
+.lake[id="1"] {
+  grid-column: span 1;
+  grid-row: 6/12;
+  margin-right: 30px;
+  border-radius: 25px;
+}
+.animal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+  transition: 0.5s linear;
+  transform-origin: center;
+  z-index: 2;
+}
+.waterReservoir {
+  background-color: #808080;
+  border-radius: 25px;
+}
+.waterReservoir[id="1"] {
+  grid-column: span 1;
+  grid-row: 3/5;
+  margin-right: 30px;
+}
+.animalBodyContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.animal.cow {
+  width: 17px;
+  height: 50px;
+  overflow: hidden;
+  /* background-image: url(images/happy-cow-cartoon-character_1308-101872-removebg-preview.png);
+  background-size: contain; */
+}
+
+.animal.cat {
+  background-image: url(images/1657743762_1-flomaster-club-p-kot-idet-risunok-krasivo-1-removebg-preview.png);
+  background-size: contain;
+  background-color: orange;
+}
+.pipe {
+  min-width: 10px;
+  min-height: 10px;
+  background-color: #808080;
+  position: absolute;
+}
+
+[class~="animalLimb"] {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+[class~="animalLimb"][class~="animalHead"] {
+  width: 12px;
+  height: 7px;
+}
+[class~="animalLimb"][class~="animalBody"] {
+  width: 15px;
+  height: 23px;
+}
+[class~="animalLimb"][class~="animalLeg"] {
+  width: 5px;
+  height: 15px;
+  transform: rotateX(45deg);
+}
+
+.animalLimb.cow.animalHead {
+  background-image: url(images/cow/cow-head-top-1.png);
+  width: 90%;
+  top: 7px;
+  height: 13px;
+  left: 4%;
+}
+.animalLimb.cow.animalBody {
+  background-image: url(images/cow/cow-body-1.png);
+  z-index: 1;
+  width: 100%;
+  top: 17px;
+  height: 40px;
+}
+.animalLimb.cow.animalLeg1 {
+  background-image: url(images/cow/cow-leg1.png);
+  top: 17px;
+  left: 0px;
+  height: 15px;
+  width: 5px;
+  transform-origin: center top;
+  transform: rotateX(90deg)
+}
+.animalLimb.cow.animalLeg2 {
+  background-image: url(images/cow/cow-leg-2.png);
+  top: 17px;
+  right: 0px;
+  height: 15px;
+  width: 5px;
+  transform-origin: center top;
+  transform: rotateX(90deg)
+}
+.animalLimb.cow.animalLeg3 {
+  background-image: url(images/cow/cow-leg-3.png);
+  bottom: -15px;
+  right: 0px;
+  height: 15px;
+  width: 5px;
+  transform-origin: center top;
+  transform: rotateX(90deg)
+}
+.animalLimb.cow.animalLeg4 {
+  background-image: url(images/cow/cow-leg-4.png);
+  bottom: -15px;
+  left: 0px;
+  height: 15px;
+  width: 5px;
+  transform-origin: center top;
+  transform: rotateX(90deg)
+}
+
+.shed{
+  position: relative;
+  display: grid;
+  width: 170px;
+  background-color: rgb(234, 214, 189);
+  justify-content: space-between;
+  grid-template-columns: 60px 60px;
+  grid-template-rows: 5fr;
+  grid-auto-flow: 1fr/60px;
+  row-gap: 5px;
+}
+.stall{
+  width: 60px;
+  border: rgb(109, 52, 13) 3px solid;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stall.leftside{
+  grid-column: 0/1;
+}
+.stall.rightside{
+  grid-column: 2/3;
+}

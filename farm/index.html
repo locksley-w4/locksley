@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farm</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <div class="test"></div> -->
+    <div class="container">
+      <section class="grid">
+        <div class="waterReservoir" id="1"></div>
+        <div class="lake" id="1"></div>
+        <div class="farmLand"></div>
+      </section>
+      <section class="grid">
+        <button onclick="save()"></button>
+        <button onclick="localStorage.clear()"></button>
+        <button onclick="document.querySelector('.animal').initObj.removeMob()"></button>
+        <div class="shed" id="1">
+          <div class="stall"></div>
+          <div class="stall"></div>
+          <div class="stall"></div>
+          <div class="stall"></div>
+          <div class="stall"></div>
+        </div>
+      </section>
+      <div class="pipes"></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script/Animal.js"></script>
+    <script src="script/Cow.js"></script>
+    <script src="script/Cat.js"></script>
+    <script src="script/Pipe.js"></script>
+    <script src="script/app.js"></script>
+  </body>
+</html>
