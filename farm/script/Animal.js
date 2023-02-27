@@ -18,7 +18,7 @@ class Animal {
     // this.othersCanAccess = true;
     if (addToTotalList) {
       Animal.allMobs.push(this);
-      if (children.length > 0) Animal.allMobs.push(children);
+      if (children.length > 0) Animal.allMobs.push(...children);
     }
   }
   get name() {
@@ -35,27 +35,31 @@ class Animal {
   }
   static getStartSet() {
     let result = {};
-    result.allMobs = []
-    Animal.generateMobs(5,["cow"], "SP", 0, (animal)=>{
-      result.allMobs.push(animal)
-
+    result.allMobs = [];
+    Animal.generateMobs(5, ["Cow"], "SP", 0, (animal) => {
+      result.allMobs.push(animal);
     });
     farmLand.grassStatus = 100;
     return result;
   }
-  static generateMobs(quantity, types = ["Cow"], name = "SP", age = 0, callbackfn) {
+  static generateMobs(
+    quantity,
+    types = ["Cow"],
+    name = "SP",
+    age = 0,
+    callbackfn
+  ) {
     for (let i = 0; i < quantity; i++) {
       let spawningAnimal = null;
       switch (rArrElem(types)) {
         case "Cow":
-          spawningAnimal = new Cow(name, age,[], false);
+          spawningAnimal = new Cow(name, age, [], false);
           break;
         case "Cat":
           spawningAnimal = new Cat(name, age, [], false);
           break;
-          
       }
-      callbackfn(spawningAnimal)
+      callbackfn?.(spawningAnimal);
     }
   }
   static createAnimalFromJSON(JSONData) {
@@ -109,6 +113,13 @@ class Animal {
     res.setAttribute("data-health", this.health);
     res.title = this.health;
 
+    // res.addEventListener("pointerdown", function (e) {
+    //   this.animalPointerDownEvent(e);
+    // });
+    // res.addEventListener("pointerup", function (e) {
+    //   this.animalPointerUpEvent(e);
+    // });
+
     res.initObj = initObj;
     this.html = res;
     return res;
@@ -123,6 +134,13 @@ class Animal {
     this.bodyContainer.appendChild(this.leg2);
     this.bodyContainer.appendChild(this.leg3);
     this.bodyContainer.appendChild(this.leg4);
+
+    this.html.addEventListener("pointerdown", function (e) {
+      this.initObj.animalPointerDownEvent(e);
+    });
+    this.html.addEventListener("pointerup", function (e) {
+      this.initObj.animalPointerUpEvent(e);
+    });
 
     this.startAging();
     this.randomMove(7000);
@@ -340,6 +358,24 @@ class Animal {
     setTimeout(() => {
       animal.randomMove(7000);
     }, 3000);
+  }
+  animalPointerDownEvent(e) {
+    clearInterval(this.moveInterval);
+    console.log(1);
+    this.html.style.position = "fixed"
+    this.html.addEventListener("pointermove", () => {
+      this.animalPointerMoveEvent(e, this.html);
+    });
+  }
+  animalPointerUpEvent(e) {
+    console.log(2);
+    this.html.style.position = "absolute"
+    this.randomMove(7000);
+  }
+  animalPointerMoveEvent(event, animal) {
+    console.log(3);
+    animal.style.left = event.offsetX + "px";
+    animal.style.top = event.offsetY + "px";
   }
 }
 // document.addEventListener("click", e=>{Animal.animalFollowTouch(e)})

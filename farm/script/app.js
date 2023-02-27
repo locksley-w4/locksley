@@ -16,21 +16,18 @@ function roundFloat(num, dec = 2) {
 window.addEventListener("load", function () {
   Array.from(document.querySelectorAll(".shed")).forEach((shed) => {
     distributeStalls(shed);
+    loadSavedData();
   });
-
-
 });
-function loadSavedData(){
+function loadSavedData() {
   let savedData = JSON.parse(this.localStorage.getItem("savedData")) || Animal.getStartSet();
-  console.log(savedData);
+
   savedData.allMobs.forEach((elem) => {
     Animal.createAnimalFromJSON(elem);
   });
   Animal.allMobs.forEach((mob) => {
-  mob.addToFarmLand(mob.styleClass, mob.stayingPlace);
-  console.log(mob);
+    mob.addToFarmLand(mob.styleClass);
   });
-
 }
 function distributeStalls(shed) {
   let rightSide = Array.from(shed.querySelectorAll(".stall"));
@@ -56,7 +53,10 @@ function save() {
   //     grassStatus: elem.grassStatus,
   //   });
   // });
-  localStorage.setItem("savedData", JSON.stringify(savedData, function replacer(key, string){
-    return ["html"].includes(key) ? undefined : string  // push cycle properties to the array
-  }));
+  localStorage.setItem(
+    "savedData",
+    JSON.stringify(savedData, function replacer(key, string) {
+      return ["html"].includes(key) ? undefined : string; // push cycle properties to the array
+    })
+  );
 }

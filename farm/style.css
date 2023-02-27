@@ -169,6 +169,7 @@ section.grid {
 
 .shed{
   position: relative;
+  height: max-content;
   display: grid;
   width: 170px;
   background-color: rgb(234, 214, 189);
