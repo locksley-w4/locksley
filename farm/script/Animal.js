@@ -1,5 +1,5 @@
 "use strict";
-const farmLand = document.querySelector(".farmLand");
+const mainFarmLand = document.querySelector(".farmLand#farmLand1");
 
 /**
  * @class
@@ -39,7 +39,7 @@ class Animal {
     Animal.generateMobs(5, ["Cow"], "SP", 0, (animal) => {
       result.allMobs.push(animal);
     });
-    farmLand.grassStatus = 100;
+    mainFarmLand.grassStatus = 100;
     return result;
   }
   static generateMobs(
@@ -104,10 +104,10 @@ class Animal {
 
     //randomising spawning coordinates
     res.style.left =
-      rInt(this.stayingPlace.offsetLeft, this.stayingPlace.clientWidth - 50) +
+      rInt(0, this.stayingPlace.clientWidth - 50) +
       "px";
     res.style.top =
-      rInt(this.stayingPlace.offsetLeft, this.stayingPlace.clientHeight - 50) +
+      rInt(0, this.stayingPlace.clientHeight - 50) +
       "px";
 
     res.setAttribute("data-health", this.health);
@@ -125,7 +125,7 @@ class Animal {
     return res;
   }
   addToFarmLand(styleClass = this.styleClass, stayingPlace) {
-    this.stayingPlace = stayingPlace ?? farmLand;
+    this.stayingPlace = stayingPlace ?? mainFarmLand;
     this.stayingPlace.appendChild(this.createHTMLAnimalElem(styleClass));
     this.html.appendChild(this.bodyContainer);
     this.bodyContainer.appendChild(this.body);
