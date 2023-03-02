@@ -1,6 +1,8 @@
 "use strict";
 const mainFarmLand = document.querySelector(".farmLand#farmLand1");
-
+const animalMenu = document.querySelector(".animalMenu");
+animalMenu.healthBar = document.querySelector(".animalMenu .healthBar");
+animalMenu.satietyBar = document.querySelector(".animalMenu .satietyBar");
 /**
  * @class
  * @method addToFarmLand creates HTML element of the animal and inserts it to the farmland
@@ -103,12 +105,8 @@ class Animal {
     this.leg4 = leg4;
 
     //randomising spawning coordinates
-    res.style.left =
-      rInt(0, this.stayingPlace.clientWidth - 50) +
-      "px";
-    res.style.top =
-      rInt(0, this.stayingPlace.clientHeight - 50) +
-      "px";
+    res.style.left = rInt(0, this.stayingPlace.clientWidth - 50) + "px";
+    res.style.top = rInt(0, this.stayingPlace.clientHeight - 50) + "px";
 
     res.setAttribute("data-health", this.health);
     res.title = this.health;
@@ -359,23 +357,41 @@ class Animal {
       animal.randomMove(7000);
     }, 3000);
   }
-  animalPointerDownEvent(e) {
+  animalPointerDownEvent(event) {
     clearInterval(this.moveInterval);
-    console.log(1);
-    this.html.style.position = "fixed"
-    this.html.addEventListener("pointermove", () => {
-      this.animalPointerMoveEvent(e, this.html);
-    });
+    this.showMenu();
   }
-  animalPointerUpEvent(e) {
-    console.log(2);
-    this.html.style.position = "absolute"
-    this.randomMove(7000);
-  }
+
+  animalPointerUpEvent(event) {}
   animalPointerMoveEvent(event, animal) {
     console.log(3);
     animal.style.left = event.offsetX + "px";
     animal.style.top = event.offsetY + "px";
+  }
+  showMenu() {
+    if (animalMenu.isActive) {
+      Animal.hideMenu();
+      return
+    }
+    let currentObj = this;
+    animalMenu.isActive = true;
+    window.addEventListener("click", Animal.hideMenu);
+    animalMenu.targetObject = this;
+
+    animalMenu.style.display = "flex";
+    animalMenu.style.left = event.x + "px";
+    animalMenu.style.top = event.y + "px";
+
+    animalMenu.healthBar.style.width = this.health + "%"
+    animalMenu.satietyBar.style.width = this.satiety + "%"
+  }
+  static hideMenu() {
+    if (event.target !== animalMenu) {
+      animalMenu.isActive = false;
+      window.removeEventListener("click", Animal.hideMenu);
+      animalMenu.style.display = "none";
+      animalMenu.targetObject.randomMove(7000);
+    }
   }
 }
 // document.addEventListener("click", e=>{Animal.animalFollowTouch(e)})

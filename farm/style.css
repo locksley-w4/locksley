@@ -25,7 +25,7 @@ section.grid {
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 15px;
 }
-.test{
+.test {
   position: fixed;
   width: 1200px;
   height: 600px;
@@ -40,7 +40,7 @@ section.grid {
   flex-wrap: wrap;
   border-radius: 15px;
 }
-.farmLand#farmLand1{
+.farmLand#farmLand1 {
   grid-column: span 3;
   grid-row: span 3;
 }
@@ -122,55 +122,54 @@ section.grid {
 .animalLimb.cow.animalHead {
   background-image: url(images/cow/cow-head-top-1.png);
   width: 90%;
-  top: 7px;
   height: 26px;
-  left: 4%;
+  left: 5%;
 }
 .animalLimb.cow.animalBody {
   background-image: url(images/cow/cow-body-1.png);
   z-index: 1;
   width: 100%;
-  top: 30px;
+  top: 27px;
   height: 80px;
 }
 .animalLimb.cow.animalLeg1 {
   background-image: url(images/cow/cow-leg1.png);
-  top: 30px;
+  top: 27px;
   left: 0px;
   height: 30px;
   width: 10px;
   transform-origin: center top;
-  transform: rotateX(90deg)
+  transform: rotateX(90deg);
 }
 .animalLimb.cow.animalLeg2 {
   background-image: url(images/cow/cow-leg-2.png);
-  top: 17px;
+  top: 27px;
   right: 0px;
   height: 30px;
   width: 10px;
   transform-origin: center top;
-  transform: rotateX(90deg)
+  transform: rotateX(90deg);
 }
 .animalLimb.cow.animalLeg3 {
   background-image: url(images/cow/cow-leg-3.png);
-  bottom: -15px;
+  bottom: -30px;
   right: 0px;
   height: 30px;
   width: 10px;
   transform-origin: center top;
-  transform: rotateX(90deg)
+  transform: rotateX(90deg);
 }
 .animalLimb.cow.animalLeg4 {
   background-image: url(images/cow/cow-leg-4.png);
-  bottom: -15px;
+  bottom: -30px;
   left: 0px;
   height: 30px;
   width: 10px;
   transform-origin: center top;
-  transform: rotateX(90deg)
+  transform: rotateX(90deg);
 }
 
-.shed{
+.shed {
   position: relative;
   height: max-content;
   display: grid;
@@ -182,7 +181,7 @@ section.grid {
   grid-auto-flow: 1fr/60px;
   row-gap: 10px;
 }
-.stall{
+.stall {
   width: 120px;
   border: rgb(109, 52, 13) 3px solid;
   height: 60px;
@@ -190,9 +189,43 @@ section.grid {
   align-items: center;
   justify-content: center;
 }
-.stall.leftside{
+.stall.leftside {
   grid-column: 0/1;
 }
-.stall.rightside{
+.stall.rightside {
   grid-column: 2/3;
+}
+
+.animalMenu {
+  position: fixed;
+  left: 0;
+  height: 0;
+  width: 150px;
+  height: 100px;
+  display: none;
+  flex-direction: column;
+  z-index: 100000;
+  background-color: #f0f8ff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.animalMenu .stats{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+}
+.healthBar{
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background-color: #e53737;
+}
+.satietyBar{
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background-color: #ffa200;
 }
