@@ -14,19 +14,42 @@
         <div class="healthBar"></div>
         <div class="satietyBar"></div>
       </div>
+      <div class="controls">
+        <button
+          id="changePlace"
+          style="background-image: url(images/icons/move.png)"
+        ></button>
+      </div>
     </div>
     <div class="container">
-      <section class="grid">
+      <section class="grid" id="1"></section>
+      <section class="grid" id="2"></section>
+      <section class="grid" id="3">
+        <div
+          class="farmLand"
+          id="farmLand2"
+          data-animal-capable="true"
+          data-animal-can-move="true"
+        ></div>
+      </section>
+      <section class="grid" id="4">
         <div class="waterReservoir" id="1"></div>
         <div class="lake" id="1"></div>
       </section>
-      <section class="grid">
-        <div class="farmLand" id="farmLand1"></div>
+      <section class="grid" id="5">
+        <div
+          class="farmLand"
+          id="farmLand1"
+          data-animal-capable="true"
+          data-animal-can-move="true"
+        ></div>
       </section>
-      <section class="grid">
+      <section class="grid" id="6">
         <button onclick="save()"></button>
         <button onclick="localStorage.clear()"></button>
-        <button onclick="document.querySelector('.animal').initObj.removeMob()"></button>
+        <button
+          onclick="document.querySelector('.animal').initObj.removeMob()"
+        ></button>
         <div class="shed" id="1">
           <div class="stall"></div>
           <div class="stall"></div>
@@ -35,9 +58,11 @@
           <div class="stall"></div>
         </div>
       </section>
+      <section class="grid" id="7"></section>
+      <section class="grid" id="8"></section>
+      <section class="grid" id="9"></section>
       <div class="pipes"></div>
     </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="script/Animal.js"></script>

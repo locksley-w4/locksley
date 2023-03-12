@@ -13,24 +13,38 @@ function roundFloat(num, dec = 2) {
 //   document.querySelector('.waterReservoir[id="1"]'),
 //   document.querySelector('.lake[id="1"]')
 // );
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   Array.from(document.querySelectorAll(".shed")).forEach((shed) => {
-    distributeStalls(shed);
+    let mainFarmLandCords = mainFarmLand.getBoundingClientRect();
     loadSavedData();
+    adjustStalls(shed);
+    window.scrollTo(
+      mainFarmLandCords.x - mainFarmLandCords.width * 0.3,
+      mainFarmLandCords.y
+    );
+
   });
 });
+window.addEventListener("beforeunload", () =>{
+  save()
+});
 function loadSavedData() {
-  let savedData = JSON.parse(this.localStorage.getItem("savedData")) || Animal.getStartSet();
-
+  let savedData =
+  JSON.parse(this.localStorage.getItem("savedData")) || Animal.getStartSet();
+  
   savedData.allMobs.forEach((elem) => {
     Animal.createAnimalFromJSON(elem);
   });
   Animal.allMobs.forEach((mob) => {
     mob.addToFarmLand(mob.styleClass);
   });
+  console.log(savedData);
 }
-function distributeStalls(shed) {
+function adjustStalls(shed) {
   let rightSide = Array.from(shed.querySelectorAll(".stall"));
+  rightSide.forEach((elem) => {
+    elem.setAttribute("data-animal-capable", true);
+  });
   let leftSide = rightSide.splice(0, Math.ceil(rightSide.length / 2));
   rightSide.forEach((e) => {
     e.classList.add("rightSide");
@@ -40,23 +54,29 @@ function distributeStalls(shed) {
   });
 }
 
+console.log(animalMenu.className)
 function save() {
+  let allFarmLands = Array.from(document.querySelectorAll(".farmLand"));
   console.log("saved");
   let savedData = {};
   savedData.allMobs = Animal.allMobs;
-  // savedData.savedLands = Array.from(
-  //   document.querySelector("body > .container").children
-  // );
-  // savedData.landsSpecProperties = new Map();
-  // savedData.savedLands.forEach((elem) => {
-  //   savedData.landsSpecProperties.set(elem, {
-  //     grassStatus: elem.grassStatus,
-  //   });
-  // });
+  savedData.farmLandsProperties = new Map();
+  allFarmLands.forEach(e => {
+    savedData.farmLandsProperties[e.getAttribute("id")] = e.attributes;
+  });
+  console.log(savedData);
   localStorage.setItem(
     "savedData",
     JSON.stringify(savedData, function replacer(key, string) {
       return ["html"].includes(key) ? undefined : string; // push cycle properties to the array
     })
-  );
-}
+    );
+  }
+  
+animalMenu.addEventListener("click", () => {
+  animalMenu.clickEvent = true;
+});
+animalMenu.changeStayingPlaceBtn.addEventListener("click", (ev) => {
+  console.log(ev);
+  animalMenu.targetObject.showAvailableStayingPlaces();
+});

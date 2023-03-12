@@ -3,6 +3,9 @@ const mainFarmLand = document.querySelector(".farmLand#farmLand1");
 const animalMenu = document.querySelector(".animalMenu");
 animalMenu.healthBar = document.querySelector(".animalMenu .healthBar");
 animalMenu.satietyBar = document.querySelector(".animalMenu .satietyBar");
+animalMenu.changeStayingPlaceBtn = document.querySelector(
+  ".animalMenu button#changePlace"
+);
 /**
  * @class
  * @method addToFarmLand creates HTML element of the animal and inserts it to the farmland
@@ -17,6 +20,7 @@ class Animal {
     this.satiety = 15;
     this.health = 100;
     this.uniqueSymbol = Symbol();
+    this.movingState = false;
     // this.othersCanAccess = true;
     if (addToTotalList) {
       Animal.allMobs.push(this);
@@ -41,7 +45,7 @@ class Animal {
     Animal.generateMobs(5, ["Cow"], "SP", 0, (animal) => {
       result.allMobs.push(animal);
     });
-    mainFarmLand.grassStatus = 100;
+    mainFarmLand.setAttribute("food-availability", 100);
     return result;
   }
   static generateMobs(
@@ -132,7 +136,7 @@ class Animal {
     this.bodyContainer.appendChild(this.leg2);
     this.bodyContainer.appendChild(this.leg3);
     this.bodyContainer.appendChild(this.leg4);
-
+    console.log(1);
     this.html.addEventListener("pointerdown", function (e) {
       this.initObj.animalPointerDownEvent(e);
     });
@@ -154,8 +158,8 @@ class Animal {
       if (this.html.offsetLeft > this.stayingPlace.clientWidth - 70) {
         maxX = this.stayingPlace.clientWidth - this.html.offsetLeft - 50;
       }
-      if (this.html.offsetTop < 50) minY = -this.html.offsetTop + 10;
-      if (this.html.offsetTop > this.stayingPlace.clientHeight - 70) {
+      if (this.html.offsetTop < 100) minY = -this.html.offsetTop + 10;
+      if (this.html.offsetTop > this.stayingPlace.clientHeight - 110) {
         maxY = this.stayingPlace.clientHeight - this.html.offsetTop - 50;
       }
 
@@ -235,17 +239,17 @@ class Animal {
     });
   }
   eat() {
-    if (this.stayingPlace.grassStatus > 0) {
+    if (this.stayingPlace.getAttribute("food-availability") > 0) {
       this.satiety = roundFloat(this.satiety + 0.3, 2);
-      this.stayingPlace.grassStatus = roundFloat(
-        this.stayingPlace.grassStatus - 0.3,
-        1
-      );
+      this.stayingPlace.setAttribute("food-availability", roundFloat(
+        this.stayingPlace.getAttribute("food-availability") - 0.05,
+        3
+      ));
       this.stayingPlace.style.backgroundColor = `rgb(${
-        81 + (100 - this.stayingPlace.grassStatus)
+        81 + (100 - this.stayingPlace.getAttribute("food-availability"))
       }, 218, 51)`;
     } else {
-      console.warn("Need water!", this.stayingPlace.grassStatus);
+      console.warn("Need water!", this.stayingPlace.getAttribute("food-availability"));
     }
   }
   starving() {
@@ -275,8 +279,10 @@ class Animal {
     ];
     this.agingInterval = setInterval(() => {
       this.age = this.age + 1;
-      this.html.style.width = initialWidth + this.age + "px";
-      this.html.style.height = initialHeight + this.age + "px";
+      this.html.style.width =
+        initialWidth + 0.01 * initialWidth * this.age + "px";
+      this.html.style.height =
+        initialHeight + 0.01 * initialHeight * this.age + "px";
     }, 60000);
   }
   // breeding
@@ -371,27 +377,66 @@ class Animal {
   showMenu() {
     if (animalMenu.isActive) {
       Animal.hideMenu();
-      return
+      return;
     }
     let currentObj = this;
     animalMenu.isActive = true;
-    window.addEventListener("click", Animal.hideMenu);
+    setTimeout(() => {
+      window.addEventListener("click", Animal.hideMenu);
+    }, 300);
     animalMenu.targetObject = this;
 
     animalMenu.style.display = "flex";
-    animalMenu.style.left = event.x + "px";
-    animalMenu.style.top = event.y + "px";
-
-    animalMenu.healthBar.style.width = this.health + "%"
-    animalMenu.satietyBar.style.width = this.satiety + "%"
+    animalMenu.style.left = event.pageX + "px";
+    animalMenu.style.top = event.pageY + "px";
+    animalMenu.healthBar.style.width = this.health + "%";
+    animalMenu.satietyBar.style.width = (100 * this.satiety) / 15 + "%"; // change init satiety(15) here if necessary
   }
   static hideMenu() {
-    if (event.target !== animalMenu) {
+    if (!animalMenu.clickEvent) {
       animalMenu.isActive = false;
       window.removeEventListener("click", Animal.hideMenu);
       animalMenu.style.display = "none";
-      animalMenu.targetObject.randomMove(7000);
     }
+    animalMenu.clickEvent = false;
+  }
+
+  showAvailableStayingPlaces() {
+    let availablePlaces = Array.from(
+      document.querySelectorAll('div[data-animal-capable="true"]')
+    );
+    availablePlaces.forEach((place) => {
+      console.log(place);
+      place.style.filter = "hue-rotate(15deg)";
+      place.showingshowingAnimation = anime({
+        targets: place,
+        scale: 1.04,
+        direction: "alternate",
+        duration: 1500,
+        easing: "easeInOutSine",
+        loop: true,
+      });
+      place.addEventListener("click", this.changeStayingPlace);
+    });
+  }
+  changeStayingPlace() {
+    let movingToPlace = event.target;
+    console.log(movingToPlace);
+    animalMenu.targetObject.html.remove();
+    movingToPlace.appendChild(animalMenu.targetObject.html);
+    animalMenu.targetObject.html.style.left = 0
+    animalMenu.targetObject.html.style.top = 0
+    if(movingToPlace.getAttribute("data-animal-can-move") === true){
+     animalMenu.targetObject.randomMove(7000);
+    }
+    Array.from(
+      document.querySelectorAll('div[data-animal-capable="true"]')
+    ).forEach(e=>{
+      e.removeEventListener("click", animalMenu.targetObject.changeStayingPlace);
+      anime.remove(e);
+      e.style.transform = "";
+      e.style.filter = "none";
+    });
   }
 }
 // document.addEventListener("click", e=>{Animal.animalFollowTouch(e)})

@@ -16,12 +16,13 @@ body,
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+  background-color: rgb(192, 255, 44);
   /* flex-wrap: 10vw; */
 }
 section.grid {
   display: grid;
-  width: 900px;
-  height: 900px;
+  width: 750px;
+  height: 750px;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 15px;
 }
@@ -115,56 +116,56 @@ section.grid {
 }
 [class~="animalLimb"][class~="animalLeg"] {
   width: 10px;
-  height: 30px;
+  height: 15px;
   transform: rotateX(45deg);
 }
 
 .animalLimb.cow.animalHead {
   background-image: url(images/cow/cow-head-top-1.png);
   width: 90%;
-  height: 26px;
+  height: 20%;
   left: 5%;
 }
 .animalLimb.cow.animalBody {
   background-image: url(images/cow/cow-body-1.png);
   z-index: 1;
   width: 100%;
-  top: 27px;
-  height: 80px;
+  top: 21%;
+  height: 65%;
 }
 .animalLimb.cow.animalLeg1 {
   background-image: url(images/cow/cow-leg1.png);
-  top: 27px;
+  top: 21%;
   left: 0px;
-  height: 30px;
-  width: 10px;
+  height: 30%;
+  width: 29%;
   transform-origin: center top;
   transform: rotateX(90deg);
 }
 .animalLimb.cow.animalLeg2 {
   background-image: url(images/cow/cow-leg-2.png);
-  top: 27px;
+  top: 21%;
   right: 0px;
-  height: 30px;
-  width: 10px;
+  height: 30%;
+  width: 29%;
   transform-origin: center top;
   transform: rotateX(90deg);
 }
 .animalLimb.cow.animalLeg3 {
   background-image: url(images/cow/cow-leg-3.png);
-  bottom: -30px;
+  top: 86%;
   right: 0px;
-  height: 30px;
-  width: 10px;
+  height: 30%;
+  width: 29%;
   transform-origin: center top;
   transform: rotateX(90deg);
 }
 .animalLimb.cow.animalLeg4 {
   background-image: url(images/cow/cow-leg-4.png);
-  bottom: -30px;
+  top: 86%;
   left: 0px;
-  height: 30px;
-  width: 10px;
+  height: 30%;
+  width: 29%;
   transform-origin: center top;
   transform: rotateX(90deg);
 }
@@ -197,13 +198,15 @@ section.grid {
 }
 
 .animalMenu {
-  position: fixed;
+  position: absolute;
   left: 0;
   height: 0;
   width: 150px;
   height: 100px;
   display: none;
   flex-direction: column;
+  justify-content: start;
+  align-items: center;
   z-index: 100000;
   background-color: #f0f8ff;
   border-radius: 5px;
@@ -228,4 +231,23 @@ section.grid {
   height: 5px;
   border-radius: 3px;
   background-color: #ffa200;
+}
+.animalMenu .controls{
+  width: 100%;
+  height: 30px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animalMenu .controls button{
+  background: none;
+  outline: none;
+  border: 1px solid #808080;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-size: contain;
+  background-position: center;
+  padding: 3px;
 }
