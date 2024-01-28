@@ -48,9 +48,11 @@ function adjustStalls(shed) {
   let leftSide = rightSide.splice(0, Math.ceil(rightSide.length / 2));
   rightSide.forEach((e) => {
     e.classList.add("rightSide");
+    e.setAttribute("data-rotation", 3);
   });
   leftSide.forEach((e) => {
     e.classList.add("leftSide");
+    e.setAttribute("data-rotation", 1);
   });
 }
 

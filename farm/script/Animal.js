@@ -241,15 +241,21 @@ class Animal {
   eat() {
     if (this.stayingPlace.getAttribute("food-availability") > 0) {
       this.satiety = roundFloat(this.satiety + 0.3, 2);
-      this.stayingPlace.setAttribute("food-availability", roundFloat(
-        this.stayingPlace.getAttribute("food-availability") - 0.05,
-        3
-      ));
+      this.stayingPlace.setAttribute(
+        "food-availability",
+        roundFloat(
+          this.stayingPlace.getAttribute("food-availability") - 0.05,
+          3
+        )
+      );
       this.stayingPlace.style.backgroundColor = `rgb(${
         81 + (100 - this.stayingPlace.getAttribute("food-availability"))
       }, 218, 51)`;
     } else {
-      console.warn("Need water!", this.stayingPlace.getAttribute("food-availability"));
+      console.warn(
+        "Need water!",
+        this.stayingPlace.getAttribute("food-availability")
+      );
     }
   }
   starving() {
@@ -424,15 +430,22 @@ class Animal {
     console.log(movingToPlace);
     animalMenu.targetObject.html.remove();
     movingToPlace.appendChild(animalMenu.targetObject.html);
-    animalMenu.targetObject.html.style.left = 0
-    animalMenu.targetObject.html.style.top = 0
-    if(movingToPlace.getAttribute("data-animal-can-move") === true){
-     animalMenu.targetObject.randomMove(7000);
+    animalMenu.targetObject.html.style.left = 0;
+    animalMenu.targetObject.html.style.top = 0;
+    animalMenu.targetObject.html.style.transform = `rotate(${
+      movingToPlace.getAttribute("data-rotation") * 90
+    }deg)`;
+    if (+movingToPlace.getAttribute("data-animal-can-move") === 1) {
+      animalMenu.targetObject.randomMove(7000);
+      console.log(animalMenu.targetObject);
     }
     Array.from(
       document.querySelectorAll('div[data-animal-capable="true"]')
-    ).forEach(e=>{
-      e.removeEventListener("click", animalMenu.targetObject.changeStayingPlace);
+    ).forEach((e) => {
+      e.removeEventListener(
+        "click",
+        animalMenu.targetObject.changeStayingPlace
+      );
       anime.remove(e);
       e.style.transform = "";
       e.style.filter = "none";

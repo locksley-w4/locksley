@@ -114,7 +114,7 @@ buttons.forEach((elem, index) => {
             right();
             newQuest();
         } else {
-            count.innerHTML = --rightAnswers;
+            if(count.innerHTML > 0)count.innerHTML = --rightAnswers;
             quest = makeQuestion(0, 100);
             questLabel.innerHTML = quest.quest
             wrong();
@@ -307,24 +307,24 @@ resetButton.addEventListener("click", () => {
 
 
 
-const scene = document.querySelector(".scene");
-let dataDepth = 1
+// const scene = document.querySelector(".scene");
+// let dataDepth = 1
 
-for (let i = 0; i < 100; i++) {
-    let el = document.createElement("div")
-    scene.insertAdjacentElement("beforeend", el)
-    el.innerHTML = randNumber(0, 100, 4)
-    el.setAttribute("data-depth", rand(-100, 100) / 100)
-    el.style.fontSize = `${rand(10, 40)}px`
-    el.style.opacity = rand(40, 100) / 100
-}
+// for (let i = 0; i < 100; i++) {
+//     let el = document.createElement("div")
+//     scene.insertAdjacentElement("beforeend", el)
+//     el.innerHTML = randNumber(0, 100, 4)
+//     el.setAttribute("data-depth", rand(-100, 100) / 100)
+//     el.style.fontSize = `${rand(10, 40)}px`
+//     el.style.opacity = rand(40, 100) / 100
+// }
 
-let paralllax = new Parallax(scene, {
-    relativeInput: true,
-    inputElement: box
-});
+// let paralllax = new Parallax(scene, {
+//     relativeInput: true,
+//     inputElement: box
+// });
 
-for (elem of Array.from(scene.children)) {
-    elem.style.top = `${rand(15, visualViewport.height - 15)}px`
-    elem.style.left = `${rand(15, visualViewport.width - 15)}px`
-}
+// for (elem of Array.from(scene.children)) {
+//     elem.style.top = `${rand(15, visualViewport.height - 15)}px`
+//     elem.style.left = `${rand(15, visualViewport.width - 15)}px`
+// }

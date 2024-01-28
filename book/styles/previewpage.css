@@ -3,57 +3,40 @@
 ::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  -webkit-transition: 0.4s ease all;
   transition: 0.4s ease all;
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: rgb(241, 241, 241);
 }
 
 .container {
   padding: 15px;
   width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 auto;
-  background-color: #dbdbdb;
+  background-color: rgb(219, 219, 219);
 }
 
 .bookpic {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
-  -webkit-box-flex: 30%;
-      -ms-flex: 30% 0 0px;
-          flex: 30% 0 0;
+  flex: 30% 0 0;
   min-height: 350px;
 }
 
 .booktext {
-  -webkit-box-flex: 1;
-      -ms-flex: auto 1 1;
-          flex: auto 1 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: auto 1 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   padding: 10% 0 0 0;
-  color: #131346;
+  color: rgb(19, 19, 70);
 }
 .booktext h2 {
   font-size: 40px;
@@ -61,12 +44,12 @@ body {
 .booktext h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #898b08;
+  color: rgb(137, 139, 8);
 }
 .booktext button {
   margin-top: 15px;
   border: none;
-  background-color: #6f6de2;
+  background-color: rgb(111, 109, 226);
   outline: none;
   padding: 15px;
   border-radius: 20px;
@@ -80,31 +63,20 @@ body {
   font-weight: 700;
 }
 .booktext button:hover {
-  background-color: #6de290;
+  background-color: rgb(109, 226, 144);
 }
 
 .es {
   width: 100%;
   margin-top: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .es div {
-  -webkit-box-flex: 25%;
-      -ms-flex: 25% 0 0px;
-          flex: 25% 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 25% 0 0;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   padding: 25px 15px;
   text-align: center;
@@ -113,27 +85,25 @@ body {
   color: #ffffff;
 }
 .es div:nth-child(1) {
-  background-color: #bcddb9;
+  background-color: rgb(188, 221, 185);
 }
 .es div:nth-child(2) {
-  background-color: #ebadab;
+  background-color: rgb(235, 173, 171);
 }
 .es div:nth-child(3) {
-  background-color: #bdc4ee;
+  background-color: rgb(189, 196, 238);
 }
 .es div:nth-child(4) {
-  background-color: #f3f2b1;
+  background-color: rgb(243, 242, 177);
 }
 .es::after {
   content: "";
   position: relative;
   top: 0;
   left: 0;
-  -webkit-box-flex: 100%;
-      -ms-flex: 100% 0 0px;
-          flex: 100% 0 0;
+  flex: 100% 0 0;
   height: 10px;
-  background-color: #61788f;
+  background-color: rgb(97, 120, 143);
   z-index: 100;
 }
 
@@ -146,40 +116,32 @@ body {
   line-height: 1.5;
   font-weight: 400;
   text-align: justify;
-  color: #131346;
+  color: rgb(19, 19, 70);
 }
 .about h2 {
   text-align: center;
   font-size: 26px;
-  color: #898b08;
+  color: rgb(137, 139, 8);
   margin-bottom: 30px;
 }
 
 .divider {
-  -webkit-box-flex: 100%;
-      -ms-flex: 100% 0 0px;
-          flex: 100% 0 0;
+  flex: 100% 0 0;
   height: 2px;
   margin-top: 100px;
-  background-color: #131346;
+  background-color: rgb(19, 19, 70);
 }
 
 @media screen and (max-width: 1000px) {
   .container {
     width: 90%;
   }
-
   .bookpic {
-    -webkit-box-flex: 100%;
-        -ms-flex: 100% 0 0px;
-            flex: 100% 0 0;
+    flex: 100% 0 0;
     min-height: 500px;
   }
-
   .booktext {
-    -webkit-box-flex: 100%;
-        -ms-flex: 100% 0 0px;
-            flex: 100% 0 0;
+    flex: 100% 0 0;
   }
   .booktext h2 {
     font-size: 66px;
@@ -192,25 +154,19 @@ body {
   .container {
     width: 100%;
   }
-
   .booktext button {
     width: 70%;
     margin-top: 30px;
     padding: 20px 15px;
     border-radius: 30px;
   }
-
   .es div {
-    -webkit-box-flex: 50%;
-        -ms-flex: 50% 0 0px;
-            flex: 50% 0 0;
+    flex: 50% 0 0;
     padding: 15px;
   }
-
   .divider {
     display: none;
   }
-
   .about {
     margin-top: 150px;
   }
@@ -236,4 +192,4 @@ body {
   .booktext button {
     width: 100%;
   }
-}
+}/*# sourceMappingURL=previewpage.css.map */
